@@ -14,8 +14,12 @@ ENV NODE_ENV production
 
 WORKDIR /usr/src/app
 
+ADD . ./app
+# 
+# COPY package.json package-lock.json ./
+# COPY src/index.ts /app/
 # Download dependencies as a separate step to take advantage of Docker's caching.
-# Leverage a cache mount to /root/.npm to speed up subsequent builds.
+# Leverage a cache mount to /root/.npm to speed up87 subsequent builds.
 # Leverage a bind mounts to package.json and package-lock.json to avoid having to copy them into
 # into this layer.
 RUN --mount=type=bind,source=package.json,target=package.json \
@@ -33,4 +37,4 @@ COPY . .
 EXPOSE 555
 
 # Run the application.
-CMD npm run dev
+CMD node src/index.ts
