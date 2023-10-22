@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@100&display=swap');
+
+body{
+    background-color: #F9941C;
+}
+div{
+    background-color: white;
+    font-family: Prompt', sans-serif;
+}
