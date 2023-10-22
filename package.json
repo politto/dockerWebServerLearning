@@ -1,0 +1,22 @@
+{
+  "name": "collalearn_table",
+  "version": "1.0.0",
+  "description": "for os project",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/politto/dockerWebServerLearning.git"
+  },
+  "keywords": [
+    "none"
+  ],
+  "author": "Nattaphat.S, and other",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/politto/dockerWebServerLearning/issues"
+  },
+  "homepage": "https://github.com/politto/dockerWebServerLearning#readme"
+}
