@@ -6,9 +6,10 @@ header.index2 {
     margin: auto;
     padding: 2%;
     text-align: center;
-    font-size: large;
+    font-size: 1.2vw;
     margin-top: 5%;
     opacity: 75%;
+    border-radius: 15px;
 }
 
 body {
@@ -54,7 +55,7 @@ button.index2#setting{
     right: 8%;
 }
 
-button.index2#circle-button {
+button.index2#home-button {
     width: 3em;
     height: 3em;
     border: none;
@@ -67,27 +68,27 @@ button.index2#circle-button {
     top: 50px;
     right: 13%;
 }
+
 button.index1#Section1-button{
     width : 25%;
     height : 30%;
     padding : auto;
-    font-size: x-large;
+    font-size: 3vw;
     opacity: 70%;
     position: absolute;
     top: 50%;
     left: 24%;
-    
-
-
+    border-radius: 15px;
 } 
 button.index1#Section2-button{
     width : 25%;
     height : 30%;
     margin : auto;
-    font-size: x-large;
+    font-size: 3vw;
     opacity: 70%;
     position: absolute;
     top: 50%;
+    border-radius: 15px;
     left: 51%;
 } 
 
@@ -111,7 +112,7 @@ button.index2#howto-button {
     width : 50%;
 }
 
-/* Responsive design for smaller screens */
+/* Responsive design for smaller screens
 @media only screen and (max-width: 768px) {
     header {
         width: 80%;
@@ -121,6 +122,50 @@ button.index2#howto-button {
     div.how-to {
         width: 95%;
         font-size: medium;
-    }
-    
+    } */
+/*     
+} */
+.btn {
+    padding: 10px 60px;
+    background: #fff;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: 500;
+    border-radius: 30px;
 }
+.popup {
+    width: 400px;
+    background: #fff;
+    border-radius: 6px;
+    position:  absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1) ;
+    text-align: center;
+    padding : 0 30px 30px;
+    color: #333;
+    visibility: hidden; 
+    transition : transform 0.4s, top 0.4s;
+}
+
+.open-popup{
+    visibility: visible;
+    top: 50%;
+    transform : translate(-50%, -50%) scale(1);
+}
+.popup button{
+    width: 100%;
+    margin-top: 50 px;
+    padding: 10px 0;
+    background-color: green;
+    color :#fff;
+    border : 0;
+    outline : none;
+    font-size: 18px;
+    border-radius : 4px;
+    cursor : pointer;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
