@@ -1,9 +1,83 @@
 @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@100&display=swap');
 
-body{
-    background-color: #F9941C;
-}
-div{
+header.index2 {
     background-color: white;
-    font-family: Prompt', sans-serif;
+    width: 30%;
+    margin: auto;
+    padding: 2%;
+    text-align: center;
+    font-size: largest;
+    margin-top: 5%;
+    opacity: 75%;
+}
+
+body {
+    background-image: url('img/background_night.png');
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+}
+
+div.index2#how-to {
+    background-color: white;
+    width: 54%;
+    padding: 20px;
+    margin: 10% auto 0;
+    font-size: larger;
+    padding-left: 7%;
+    align-items: center;
+    justify-content: center;
+    opacity:80%;
+}
+
+* {
+    font-family: 'Prompt', sans-serif;
+}
+
+button.index2 img{
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 50%;
+}
+
+button.index2#setting{
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50px;
+    right: 100px;
+}
+
+button.index2#circle-button {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+}
+
+/* Responsive design for smaller screens */
+@media only screen and (max-width: 768px) {
+    header {
+        width: 80%;
+        font-size: large;
+    }
+
+    div.how-to {
+        width: 95%;
+        font-size: medium;
+    }
+    
 }
