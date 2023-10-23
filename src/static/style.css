@@ -6,7 +6,7 @@ header.index2 {
     margin: auto;
     padding: 2%;
     text-align: center;
-    font-size: largest;
+    font-size: large;
     margin-top: 5%;
     opacity: 75%;
 }
@@ -15,7 +15,7 @@ body {
     background-image: url('img/background_night.png');
     background-size: cover;
     background-attachment: fixed;
-    height: 100vh;
+    
 }
 
 div.index2#how-to {
@@ -41,8 +41,8 @@ button.index2 img{
 }
 
 button.index2#setting{
-    width: 50px;
-    height: 50px;
+    width: 3em;
+    height: 3em;
     border: none;
     border-radius: 50%;
     background-color: white;
@@ -51,12 +51,12 @@ button.index2#setting{
     align-items: center;
     position: absolute;
     top: 50px;
-    right: 100px;
+    right: 8%;
 }
 
 button.index2#circle-button {
-    width: 50px;
-    height: 50px;
+    width: 3em;
+    height: 3em;
     border: none;
     border-radius: 50%;
     background-color: white;
@@ -65,7 +65,50 @@ button.index2#circle-button {
     align-items: center;
     position: absolute;
     top: 50px;
-    right: 20px;
+    right: 13%;
+}
+button.index1#Section1-button{
+    width : 25%;
+    height : 30%;
+    padding : auto;
+    font-size: x-large;
+    opacity: 70%;
+    position: absolute;
+    top: 50%;
+    left: 24%;
+    
+
+
+} 
+button.index1#Section2-button{
+    width : 25%;
+    height : 30%;
+    margin : auto;
+    font-size: x-large;
+    opacity: 70%;
+    position: absolute;
+    top: 50%;
+    left: 51%;
+} 
+
+button.index2#howto-button {
+    width: 3em;
+    height: 3em;
+    border: none;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50px;
+    right: 3%;
+}
+
+.seclist{
+    margin : auto;
+    align-items: center;
+    width : 50%;
 }
 
 /* Responsive design for smaller screens */
