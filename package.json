@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/politto/dockerWebServerLearning/issues"
   },
-  "homepage": "https://github.com/politto/dockerWebServerLearning#readme"
+  "homepage": "https://github.com/politto/dockerWebServerLearning#readme",
+  "devDependencies": {
+    "@types/node": "^20.8.7"
+  }
 }
