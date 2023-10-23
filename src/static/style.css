@@ -107,16 +107,9 @@ button.index2#howto-button {
 }
 
 .seclist{
+    margin : auto;
     align-items: center;
-    margin: 5vh auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 2vw;
-}
-
-.seclist div {
-    width: 40%;
+    width : 50%;
 }
 
 /* Responsive design for smaller screens
@@ -147,9 +140,9 @@ button.index2#howto-button {
     background: #fff;
     border-radius: 6px;
     position:  absolute;
-    top: 0%;
+    top: 30%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(0.1) ;
+    transform: translate(-50%, -50%) scale(1) ;
     text-align: center;
     padding : 0 30px 30px;
     color: #333;
