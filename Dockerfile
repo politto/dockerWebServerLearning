@@ -37,4 +37,4 @@ COPY . .
 EXPOSE 555
 
 # Run the application.
-CMD node src/index.ts
+CMD npm start
