@@ -29,8 +29,9 @@ div.index2#how-to {
     align-items: center;
     justify-content: center;
     opacity:80%;
+    cursor: pointer;
 }
-
+  
 * {
     font-family: 'Prompt', sans-serif;
 }
@@ -40,8 +41,28 @@ button.index2 img{
     max-height: 90%;
     border-radius: 50%;
 }
-
-button.index2#setting{
+button[data-modal-target="#modal"]{/* Setting button */
+    width: 3em;
+    height: 3em;
+    border: none;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50px;
+    right: 7.9%;
+    cursor: pointer;
+}
+button[data-modal-target="#modal"] img { /* Setting image   */
+    max-width: 70%;
+    max-height: 70%;
+}
+button[data-modal-target="#modal"]:hover {
+    background-color: lightgray;
+}
+button.index2#settingbox{
     width: 3em;
     height: 3em;
     border: none;
@@ -53,6 +74,7 @@ button.index2#setting{
     position: absolute;
     top: 50px;
     right: 8%;
+    cursor: pointer;
 }
 
 button.index2#home-button {
@@ -67,8 +89,15 @@ button.index2#home-button {
     position: absolute;
     top: 50px;
     right: 13%;
+    cursor: pointer;
 }
-
+button.index2#home-button img { /* home image   */
+    max-width: 100%;
+    max-height: 100%;
+}
+button.index2#home-button :hover {
+    background-color: lightgray;
+}
 button.index1#Section1-button{
     width : 25%;
     height : 30%;
@@ -79,6 +108,7 @@ button.index1#Section1-button{
     top: 50%;
     left: 24%;
     border-radius: 15px;
+    cursor: pointer;
 } 
 button.index1#Section2-button{
     width : 25%;
@@ -90,6 +120,7 @@ button.index1#Section2-button{
     top: 50%;
     border-radius: 15px;
     left: 51%;
+    cursor: pointer;
 } 
 
 button.index2#howto-button {
@@ -104,6 +135,63 @@ button.index2#howto-button {
     position: absolute;
     top: 50px;
     right: 3%;
+    cursor: pointer;
+}
+
+button.index2#howto-button:hover {
+    background-color: lightgray;
+}
+
+ .modal{    /* จอSetting */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    width: 500px;
+    max-width: 80%;
+  }
+.modal.active{ /*ไม่ต้องแก้*/
+    transform:translate(-50%,-50% )scale(1);
+}
+.setting-header{/* หัวข้อsetting */
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+.setting-header .close-button{ /* ปุ่มปิด*/
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size :1.25rem;
+    font-weight: hold;
+    
+
+}
+.setting-body{
+    padding: 10px 15px;
+}
+#overlay{
+    position : fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;   
+}
+#overlay.active{
+    opacity: 1; 
+    pointer-events: all;
 }
 
 .seclist{
@@ -125,6 +213,7 @@ button.index2#howto-button {
     } */
 /*     
 } */
+<<<<<<< HEAD
 .btn {
     padding: 10px 60px;
     background: #fff;
@@ -168,4 +257,8 @@ button.index2#howto-button {
     cursor : pointer;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
+=======
+
+      
+>>>>>>> 84e6692bb9f9df40e81435f59ec454d7cc9ef4c1
 
