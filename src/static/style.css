@@ -90,6 +90,7 @@ button.index1#Section2-button{
     top: 50%;
     border-radius: 15px;
     left: 51%;
+    cursor: pointer;
 } 
 
 button.index2#howto-button {
