@@ -27,7 +27,7 @@ app.post('/classes', async (req, res) => {
     try {
         const {classId, section, subject, date, startTime, endTime} = req.body;
         const klass = new Classes({classId, section, subject, date, startTime, endTime});
-        await Classes.save();
+        await klass.save();
         res.json({success: true});
     }
     catch (err) {

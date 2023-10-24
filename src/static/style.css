@@ -146,12 +146,12 @@ button.index2#howto-button {
     text-align: center;
     padding : 0 30px 30px;
     color: #333;
-    visibility: hidden; 
+    display: none; 
     transition : transform 0.4s, top 0.4s;
 }
 
 .open-popup{
-    visibility: visible;
+    display: block;
     top: 50%;
     transform : translate(-50%, -50%) scale(1);
 }

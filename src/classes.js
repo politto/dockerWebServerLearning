@@ -9,7 +9,7 @@ const classesSchema = new mongoose.Schema(
             type: String,
             required: true
         },
-        Section: {
+        section: {
             type: String,
             required: false
         },
