@@ -2,7 +2,7 @@ const express  = require('express');
 const connectDBs = require('./db');
 const Classes = require('./classes');
 const front = require('./index');
-const Todo = require('./todoModel');
+const Todo = require('./todo');
 
 const app = express();
 app.use(express.json());
