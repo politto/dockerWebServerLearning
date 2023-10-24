@@ -1,7 +1,7 @@
 const express  = require('express');
 const connectDBs = require('./db');
 const Classes = require('./classes');
-const front = require('./index');
+//const front = require('./index');
 const Todo = require('./todo');
 
 const app = express();
@@ -71,8 +71,8 @@ app.get('/todos', async (req, res) => {
   
   app.post('/todos', async (req, res) => {
     try {
-      const { todoId, classId, topic, detail, dueDate } = req.body;
-      const todo = new Todo({ todoId, classId, topic, detail, dueDate });
+      const { todoId, classId, topic, detail, dueDate,comment } = req.body;
+      const todo = new Todo({ todoId, classId, topic, detail, dueDate ,comment});
       await todo.save();
       res.json({ success: true });
     } catch (err) {
