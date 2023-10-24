@@ -4,10 +4,8 @@ services:
     image: mongo:latest
     restart: always
     environment:
-      # MONGO_INITDB_ROOT_USERNAME: helpmeplz
-      # MONGO_INITDB_ROOT_PASSWORD: public_static_void_main_string_args
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: public
+      MONGO_INITDB_ROOT_USERNAME: helpmeplz
+      MONGO_INITDB_ROOT_PASSWORD: public_static_void_main_string_args
     ports:
       - 27017:27017
     volumes:
