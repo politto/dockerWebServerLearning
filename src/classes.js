@@ -1,6 +1,6 @@
 //class
 let { time } = require('console');
-let mongoose = require('mongoose');
+mongoose = require('mongoose');
 
 
 const classesSchema = new mongoose.Schema(
