@@ -1,23 +1,14 @@
-<<<<<<< HEAD
-let popup = document.getElementById("popup");
-
-function openPopup() {
-=======
 const openModalButtons = document.querySelectorAll('[data-modal-target]')
 const closeModalButtons = document.querySelectorAll('[data-close-button]')
 const overlay = document.getElementById('overlay')
 
 function openPopup() {
   console.log(popup);
->>>>>>> c9e3df3840eb4c1b324afc2613357d35a54bae08
   popup.classList.add("open-popup");
 }
 
 function closePopup() {
   popup.classList.remove("open-popup");
-<<<<<<< HEAD
-}
-=======
 }
 
 const locationHandler = require('../routes/pageRouter');
@@ -60,4 +51,3 @@ overlay.addEventListener('click', () => {
     closeSetting(set)
   })
 })
->>>>>>> c9e3df3840eb4c1b324afc2613357d35a54bae08

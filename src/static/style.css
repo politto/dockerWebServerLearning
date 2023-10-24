@@ -29,14 +29,9 @@ div.index2#how-to {
     align-items: center;
     justify-content: center;
     opacity:80%;
-<<<<<<< HEAD
-}
-
-=======
     cursor: pointer;
 }
   
->>>>>>> c9e3df3840eb4c1b324afc2613357d35a54bae08
 * {
     font-family: 'Prompt', sans-serif;
 }
@@ -46,10 +41,6 @@ button.index2 img{
     max-height: 90%;
     border-radius: 50%;
 }
-<<<<<<< HEAD
-
-button.index2#setting{
-=======
 button[data-modal-target="#modal"]{/* Setting button */
     width: 3em;
     height: 3em;
@@ -72,7 +63,6 @@ button[data-modal-target="#modal"]:hover {
     background-color: lightgray;
 }
 button.index2#settingbox{
->>>>>>> c9e3df3840eb4c1b324afc2613357d35a54bae08
     width: 3em;
     height: 3em;
     border: none;
@@ -84,10 +74,7 @@ button.index2#settingbox{
     position: absolute;
     top: 50px;
     right: 8%;
-<<<<<<< HEAD
-=======
     cursor: pointer;
->>>>>>> c9e3df3840eb4c1b324afc2613357d35a54bae08
 }
 
 button.index2#home-button {
@@ -102,10 +89,6 @@ button.index2#home-button {
     position: absolute;
     top: 50px;
     right: 13%;
-<<<<<<< HEAD
-}
-
-=======
     cursor: pointer;
 }
 button.index2#home-button img { /* home image   */
@@ -115,7 +98,6 @@ button.index2#home-button img { /* home image   */
 button.index2#home-button :hover {
     background-color: lightgray;
 }
->>>>>>> c9e3df3840eb4c1b324afc2613357d35a54bae08
 button.index1#Section1-button{
     width : 25%;
     height : 30%;
@@ -126,10 +108,7 @@ button.index1#Section1-button{
     top: 50%;
     left: 24%;
     border-radius: 15px;
-<<<<<<< HEAD
-=======
     cursor: pointer;
->>>>>>> c9e3df3840eb4c1b324afc2613357d35a54bae08
 } 
 button.index1#Section2-button{
     width : 25%;
@@ -141,10 +120,7 @@ button.index1#Section2-button{
     top: 50%;
     border-radius: 15px;
     left: 51%;
-<<<<<<< HEAD
-=======
     cursor: pointer;
->>>>>>> c9e3df3840eb4c1b324afc2613357d35a54bae08
 } 
 
 button.index2#howto-button {
@@ -159,8 +135,6 @@ button.index2#howto-button {
     position: absolute;
     top: 50px;
     right: 3%;
-<<<<<<< HEAD
-=======
     cursor: pointer;
 }
 
@@ -218,7 +192,6 @@ button.index2#howto-button:hover {
 #overlay.active{
     opacity: 1; 
     pointer-events: all;
->>>>>>> c9e3df3840eb4c1b324afc2613357d35a54bae08
 }
 
 .seclist{
@@ -240,52 +213,6 @@ button.index2#howto-button:hover {
     } */
 /*     
 } */
-<<<<<<< HEAD
-.btn {
-    padding: 10px 60px;
-    background: #fff;
-    border: 0;
-    outline: none;
-    cursor: pointer;
-    font-size: 22px;
-    font-weight: 500;
-    border-radius: 30px;
-}
-.popup {
-    width: 400px;
-    background: #fff;
-    border-radius: 6px;
-    position:  absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1) ;
-    text-align: center;
-    padding : 0 30px 30px;
-    color: #333;
-    visibility: hidden; 
-    transition : transform 0.4s, top 0.4s;
-}
-
-.open-popup{
-    visibility: visible;
-    top: 50%;
-    transform : translate(-50%, -50%) scale(1);
-}
-.popup button{
-    width: 100%;
-    margin-top: 50 px;
-    padding: 10px 0;
-    background-color: green;
-    color :#fff;
-    border : 0;
-    outline : none;
-    font-size: 18px;
-    border-radius : 4px;
-    cursor : pointer;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-}
-=======
 
       
->>>>>>> c9e3df3840eb4c1b324afc2613357d35a54bae08
 
