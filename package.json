@@ -1,10 +1,11 @@
 {
   "name": "collalearn_table",
   "version": "1.0.0",
-  "description": "",
+  "description": "...",
   "main": "index.js",
   "scripts": {
-    "test": "node app.js"
+    "test": "node app.js",
+    "start": "node src/app.js"
   },
   "repository": {
     "type": "git",
@@ -14,8 +15,9 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.2",
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
-    "mongodb": "^6.0.7",
+    "mongodb": "^6.2.0",
     "mongoose": "^7.0.2"
   },
   "bugs": {
@@ -24,5 +26,6 @@
   "homepage": "https://github.com/politto/dockerWebServerLearning#readme",
   "devDependencies": {
     "@types/node": "^20.8.7"
-  }
+  },
+  "keywords": []
 }
