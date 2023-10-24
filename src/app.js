@@ -2,6 +2,7 @@ const express  = require('express');
 const connectDBs = require('./db');
 const Classes = require('./classes');
 const front = require('./index');
+const Todo = require('./todoModel');
 
 const app = express();
 app.use(express.json());
@@ -58,6 +59,47 @@ app.delete('/classes:id', async (req, res) => {
         res.status(500).send(err.message);
     }
 })
+//TodoAPI
+app.get('/todos', async (req, res) => {
+    try {
+      const todosInDb = await Todo.find();
+      res.json(todosInDb);
+    } catch (err) {
+      res.status(500).send(err.message);
+    }
+  });
+  
+  app.post('/todos', async (req, res) => {
+    try {
+      const { todoId, classId, topic, detail, dueDate } = req.body;
+      const todo = new Todo({ todoId, classId, topic, detail, dueDate });
+      await todo.save();
+      res.json({ success: true });
+    } catch (err) {
+      res.status(500).send(err.message);
+    }
+  });
+  
+  app.put('/todos/:id', async (req, res) => {
+    try {
+      const todo = await Todo.findByIdAndUpdate(req.params.id, req.body, { new: true });
+      if (!todo) throw new Error("Todo not found");
+      res.json({ success: true });
+    } catch (err) {
+      res.status(500).send(err.message);
+    }
+  });
+  
+  app.delete('/todos/:id', async (req, res) => {
+    try {
+      const todo = await Todo.findByIdAndDelete(req.params.id);
+      if (!todo) throw new Error("Todo not found");
+      res.json({ success: true });
+    } catch (err) {
+      res.status(500).send(err.message);
+    }
+  });
+  
 
 
 const port = 555;
