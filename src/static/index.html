@@ -18,41 +18,31 @@
 <body>
     <header class="index2">
         <h1><b>เลือก Section ที่ต้องการ</b></h1>
-        <a href="index.html">
-            <button class="index2" id=home-button>
-                <img src="https://cdn-icons-png.flaticon.com/512/7133/7133312.png" alt="Button Image">
-            </button>
-        </a>
 
-        <a href="index2.html">
-            <button class="index2" id="howto-button">
-                <img src="https://static.thenounproject.com/png/3165598-200.png" alt="Button Image">
-            </button>
-        </a>
-
-        <button data-modal-target="#modal">
-            <img src="https://static-00.iconduck.com/assets.00/wrench-icon-2047x2048-jyerjpd9.png" alt="Button Image">
-        </button><!--setting -->
 
     </header>
 
-    <div class="modal" id="modal">
+    <div class="modal" id="modal" >
         <div class="setting-header">
             <div class="title">
-                <label class="toggle-label">Night mode</label>
-                <label class="toggle-switch">
-                    <input type="checkbox" id="backgroundToggle">
-                    <div class="slider"></div>
-                </label>
+                <div>
+                    <label class="toggle-label">Night mode</label>
+                </div>
+                <div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="backgroundToggle">
+                        <div class="slider"></div>
+                    </label>
+                </div>
+
             </div>
-            <button data-close-button class="close-button"><img
-                    src="https://cdn-icons-png.flaticon.com/512/7693/7693271.png" alt="Close" class="close"></button>
+            <button data-close-button class="close-button" onclick="closeSetting()"><img
+                    src="https://cdn-icons-png.flaticon.com/512/7693/7693271.png" alt="Close" class="close" onclick=""></button>
         </div>
         <div class="setting-body">
             พรี่โอมสาวเยอะจัดเลยอะ
         </div>
     </div>
-    <div id="overlay"></div>
 
     <div class="seclist">
         <a href="section1.html">

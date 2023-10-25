@@ -40,10 +40,17 @@ app.get('/classDataHandler.js', function(req, res) {
   res.sendFile('classDataHandler.js', { root: "./src/static"});
 });
 
+app.get('/classDataVisual.js', function(req, res) {
+  res.sendFile('classDataVisual.js', { root: "./src/static"});
+});
+
 app.get('/classTableStyle.css', function(req, res) {
   res.sendFile('classTableStyle.css', { root: "./src/static"});
 });
 
+app.get('/scriptSEC.js', function(req, res) {
+  res.sendFile('scriptSEC.js', { root: "./src/static"});
+});
 
 app.use(express.json());
 

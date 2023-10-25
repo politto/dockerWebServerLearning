@@ -13,24 +13,48 @@
 </head>
 <body>
     <div class="container">
-            <a href="index.html">
-                <button class="index2" id=home-button>
-                    <img src="https://cdn-icons-png.flaticon.com/512/7133/7133312.png" alt="Button Image">
-                </button>
-            </a>
+            
+        <a href="index.html">
+            <button class="index2" id=home-button>
+                <img src="https://cdn-icons-png.flaticon.com/512/7133/7133312.png" alt="Button Image">
+            </button>
+        </a>
+
+        <a href="index2.html">
+            <button class="index2" id="howto-button">
+                <img src="https://static.thenounproject.com/png/3165598-200.png" alt="Button Image">
+            </button>
+        </a>
+
+        <button onclick="openSetting()" data-modal-target="#modal">
+            <img src="https://static-00.iconduck.com/assets.00/wrench-icon-2047x2048-jyerjpd9.png" alt="Button Image">
+        </button><!--setting -->
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="modal" id="modal" >
+            <div class="setting-header">
+                <div class="title">
+                    <div>
+                        <label class="toggle-label">Night mode</label>
+                    </div>
+                    <div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="backgroundToggle">
+                            <div class="slider"></div>
+                        </label>
+                    </div>
     
-            <a href="index2.html">
-                <button class="index2" id="howto-button">
-                    <img src="https://static.thenounproject.com/png/3165598-200.png" alt="Button Image">
-                </button>
-            </a>
-    
-            <button data-modal-target="#modal">
-                <img src="https://static-00.iconduck.com/assets.00/wrench-icon-2047x2048-jyerjpd9.png" alt="Button Image">
-            </button><!--setting -->
-            <br><br>
-            <br>
-            <br><br>
+                </div>
+                <button data-close-button class="close-button" onclick="closeSetting()"><img
+                        src="https://cdn-icons-png.flaticon.com/512/7693/7693271.png" alt="Close" class="close" onclick=""></button>
+            </div>
+            <div class="setting-body">
+                พรี่โอมสาวเยอะจัดเลยอะ
+            </div>
+        </div>
         <div class="header bg-primary">
             <h2>Section 1</h2>
         </div>
@@ -62,15 +86,14 @@
                 </div>
                 <div class="classesDisplay">
                     <div>
-                        <div class = "classObj" onclick=displaySubjectInfo()>hello</div>
-                        <div class = "classObj">hello</div>
+                        <div class = "classObj"  onclick=displaySubjectInfo()>hello</div>
                     </div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    <div class = "dayRow"></div>
+                    <div class = "dayRow"></div>
+                    <div class = "dayRow"></div>
+                    <div class = "dayRow"></div>
+                    <div class = "dayRow"></div>
+                    <div class = "dayRow"></div>
                 </div>
             </div>
             
@@ -97,7 +120,7 @@
         <div class = "modal-content" >
             <div>
                 <div>
-                    <h1><b>ชื่อวิชา</b></h1>
+                    <h1><b class = "subjectName"></b></h1>
                 </div>
                 <div>
                     <div onclick="hideSubjectInfo()">
@@ -109,23 +132,9 @@
             
             <div>
                 <div>
-                    <table border = "1">
-                        <tr>
-                            <th>หัวเรื่อง</th>
-                            <th>รายละเอียด</th>
-                            <th>กำหนดส่ง</th>
-                        </tr>
-                        <tr>
-                            <th>การบ้านกลุ่ม000</th>
-                            <th>wed</th>
-                            <th>วว/ดด/ปป</th>
-                        </tr>
-                        <tr>
-                            <th>การบ้านxxx</th>
-                            <th>-</th>
-                            <th>15/ดด/ปป</th>
-                        </tr>
-                    </table>
+                    <div class="assignment">
+                        <div>Topic</div>
+                    </div>
                 </div>
                 <div style = "margin: 4vh auto; width: 100%; justify-content: center;">
                     <button class="buttonTEST" id ="bt">ADD HOMEWORK</button>
@@ -146,5 +155,6 @@
     </div>
 </body>
 <script src = "scriptSEC.js"></script>
+<script src="classDataVisual.js"></script>
 <script src="classDataHandler.js"></script>
 </html>

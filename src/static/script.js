@@ -11,24 +11,34 @@ function closePopup() {
   popup.classList.remove("open-popup");
 }
 
-openModalButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const modal = document.querySelector(button.dataset.modalTarget)
-    openSetting(modal)
-  })
-})
-
- closeModalButtons.forEach(button => {
-   button.addEventListener('click', () => {
-     const set = button.closest('.modal')
-     closeSetting(set)
-  })
- })
+// openModalButtons.forEach(button => {
+//   button.addEventListener('click', () => {
+//     const modal = document.querySelector(button.dataset.modalTarget)
+//     openSetting(modal)
+//   })
+// })
+// 
+//  closeModalButtons.forEach(button => {
+//    button.addEventListener('click', () => {
+//      const set = button.closest('.modal')
+//      closeSetting(set)
+//   })
+//  })
 
 function openSetting(set) {
   if (set == null) return
   set.classList.add('active')
   overlay.classList.add('active')
+}
+
+function openSetting(){
+  document.getElementsByClassName("modal")[0].style.display = 'block';
+  // document.getElementsByClassName("modal")[0].classList.add('active');
+}
+function closeSetting(){
+  document.getElementsByClassName("modal")[0].style.display = 'none';
+  console.log("dfsdf");
+  // document.getElementsByClassName("modal")[0].classList.add('active');
 }
 
 function closeSetting(set) {
