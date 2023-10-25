@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="classTableStyle.css">
 
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <div class="container">
@@ -53,8 +55,21 @@
                     <div></div>
                 </div>
             </div>
+            
+        </div>
+        <div>
+            <br><br><br><br><br><br><br><p>sdfdsfds</p>
         </div>
     </div>
 </body>
 <script type = "module" src="classDataHandler.js"></script>
+<Script>
+document.getElementById("bt").addEventListener("click",function(){
+    document.querySelector(".popupSEC").style.display = "flex";
+})
+
+document.querySelector("close").addEventListener("click",function(){
+    document.querySelector(".popupSEC").style.display = "none";
+})
+</Script>
 </html>

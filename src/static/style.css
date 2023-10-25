@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@100&display=swap');
 
+* {
+    font-family: 'Prompt', sans-serif;
+    margin-left: 0;
+}
+
 header.index2 {
     background-color: white;
     width: 30%;
@@ -13,7 +18,7 @@ header.index2 {
 }
 
 body {
-    background-image: url('img/background_night.png');
+    background-image: url('img/background_day.png');
     background-size: cover;
     background-attachment: fixed;
     
@@ -35,6 +40,7 @@ div.index2#how-to {
 * {
     font-family: 'Prompt', sans-serif;
 }
+
 
 button.index2 img{
     max-width: 90%;
@@ -122,6 +128,12 @@ button.index1#Section2-button{
     left: 51%;
     cursor: pointer;
 } 
+button.index1#Section2-button:hover {
+    background-color: lightgray;
+}
+button.index1#Section1-button:hover {
+    background-color: lightgray;
+}
 
 button.index2#howto-button {
     width: 3em;
@@ -142,7 +154,7 @@ button.index2#howto-button:hover {
     background-color: lightgray;
 }
 
- .modal{    /* จอSetting */
+.modal{    /* จอSetting */
     position: fixed;
     top: 50%;
     left: 50%;
@@ -229,13 +241,51 @@ button.index2#howto-button:hover {
     border-radius: 6px;
     position:  absolute;
     top: 30%;
+}
+      
+
+/* ปุ่มของ SEC TEST 1*/
+/* .container{
+    position: absolute;
+    top : 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(1) ;
+    transform: translate(-50%,-50%);
     text-align: center;
-    padding : 0 30px 30px;
+} */
+
+.buttonTEST{
+    background: #fff;
+    padding: 10px 15px;
     color: #333;
     display: none; 
     transition : transform 0.4s, top 0.4s;
+    font-weight: bolder;
+    text-transform: uppercase;
+    font-size: 18px;
+    border-radius: 5px;
+    box-shadow: 6px 6px 29px -4px rgbx(0,0,0,0,0.75);
+    margin-top: 25px;
+    text-decoration: none;
+    transition: 0.4s;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonTEST:hover{
+    background: #34495e;
+    color: #fff;
+}
+
+.popupSEC{
+    background: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .open-popup{
@@ -243,17 +293,125 @@ button.index2#howto-button:hover {
     top: 50%;
     transform : translate(-50%, -50%) scale(1);
 }
-.popup button{
-    width: 100%;
-    margin-top: 50 px;
-    padding: 10px 0;
-    background-color: green;
-    color :#fff;
-    border : 0;
-    outline : none;
-    font-size: 18px;
-    border-radius : 4px;
-    cursor : pointer;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+.popup-content{
+    height: 350px;
+    width: 700px; 
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
 }
 
+.popup-content img {
+    width: 3rem;
+    height: 3rem;
+    justify-content: center;
+    align-items: center;
+}
+
+input{
+    margin: 10px auto;
+    display: block;
+    width: 50%;
+    padding: 8px;
+    border: 1px solid gray;
+}
+
+/* ปุ่มของ SEC TEST 2*/
+.bg-modal{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0.7;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.modal-content{
+    width: 800px;
+    height: 400px;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+.close{
+    max-width: 10%;
+    max-height: 10%;
+    float: right;
+    justify-content: left;
+}
+
+.close div{
+    display: flex;
+    width: 10%;
+}
+
+table{
+    width: 100%;
+}
+
+.tableH{
+    margin-left: 60px;
+}
+
+.mid{
+    justify-content: center;
+    align-items: center;
+}
+
+.toggle-label {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 18px;
+    color: black;
+}
+
+.toggle-switch {
+    position: absolute;
+    top: 20px;
+    left: 130px;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.toggle-switch input[type="checkbox"] {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
