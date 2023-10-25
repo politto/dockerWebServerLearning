@@ -92,6 +92,7 @@ function renderClassObj(id, classid, name, day, start, fin, prevfin){
         <div dataId = ${id} classId = ${classid} class = "classObj" 
         style = "margin-left: ${(start - prevfin) /100 * width * 1.3}%; width: ${(fin - start) / 100 *width * 1.3}%; background-color:${getRandomColor()}" >${name}</div>
     `;
+    
 }
 
 
