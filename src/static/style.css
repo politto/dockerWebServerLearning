@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@100;300&display=swap');
 
 * {
     font-family: 'Prompt', sans-serif;
@@ -28,7 +28,7 @@ div.index2#how-to {
     background-color: white;
     width: 54%;
     padding: 20px;
-    margin: 10% auto 0;
+    margin: 2% auto;
     font-size: larger;
     padding-left: 7%;
     align-items: center;
@@ -338,15 +338,16 @@ table{
 
 .toggle-label {
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 17px;
+    left: 17px;
     font-size: 18px;
     color: black;
+    padding: auto;
 }
 
 .toggle-switch {
     position: absolute;
-    top: 20px;
+    top: 13.5px;
     left: 130px;
     display: inline-block;
     width: 60px;
