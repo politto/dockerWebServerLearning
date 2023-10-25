@@ -34,3 +34,30 @@ overlay.addEventListener('click', () => {
     closeSetting(set)
   })
 })
+
+
+// code for change image background
+const body = document.getElementById("bg");
+const toggleSwitch = document.getElementById("backgroundToggle");
+
+// Check if there's a saved background choice in localStorage
+const savedBackground = localStorage.getItem("backgroundChoice");
+
+// Set the initial background based on the saved choice
+if (savedBackground === "image1") {
+    body.style.backgroundImage = "url('img/background_night.png')";
+    toggleSwitch.checked = true; // Set the switch to "on"
+} else {
+    body.style.backgroundImage = "url('img/background_day.png')";
+    toggleSwitch.checked = false; // Set the switch to "off"
+}
+
+toggleSwitch.addEventListener("change", function() {
+    if (this.checked) {
+        body.style.backgroundImage = "url('img/background_night.png')";
+        localStorage.setItem("backgroundChoice", "image1"); // Save the choice
+    } else {
+        body.style.backgroundImage = "url('img/background_day.png')";
+        localStorage.setItem("backgroundChoice", "image2"); // Save the choice
+    }
+});
