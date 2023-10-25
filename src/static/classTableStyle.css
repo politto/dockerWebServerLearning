@@ -1,0 +1,83 @@
+.header {
+    padding: 2vh;
+    text-align: center;
+}
+
+.content {
+    width:100%;
+    display: flex;
+    min-width: none;
+
+}
+
+.ctnt-col2{
+
+    overflow: scroll;
+    flex-grow: 9;
+}
+
+.tableTime {
+    min-width: 720px;
+    flex-grow: 1;
+    overflow: hidden;
+    height: 60px;
+    background-color: aqua;
+    display: flex;
+    flex-direction: row;
+}
+.tableTime div {
+    overflow: hidden;
+    display: flex;
+    flex-grow: 1;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.describer{
+    display: flex;
+    flex-direction: column;
+    width: 80px;
+    height: 480px;
+    background-color: rgb(149, 149, 255);
+}
+
+.describer div{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ctnt-col2::-webkit-scrollbar {
+    display: none;
+}
+
+.classesDisplay{
+    width: 100%;
+
+    min-width: 720px;
+}
+
+.classesDisplay > div {
+    height: 60px;
+    display: flex;
+}
+
+.classesDisplay > div::-webkit-scrollbar {
+    display: none;
+}
+
+.classesDisplay > div:nth-child(2n) {
+    background-color: azure;
+}
+
+.classObj{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    height: 100%;
+    border-radius: 10px;
+    /* background-color: aqua !important; */
+}
