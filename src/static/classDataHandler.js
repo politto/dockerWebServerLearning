@@ -13,15 +13,27 @@ function insertClassData() {
         let dataEachDay = getClassDataByDay(classesData, i);
         let last
         for(j = 0; j < dataEachDay.length; j++) {
-            renderClassObj
+            renderClassObj()
         }
     }
+}
+
+const displaySubjectInfo = () => {
+    // console.log(document.getElementsByClassName("bg-modal")[0]);
+    const elem = document.getElementsByClassName("bg-modal")[0];
+    elem.style.display = 'flex';
+}
+
+const hideSubjectInfo = () => {
+    // console.log(document.getElementsByClassName("bg-modal")[0]);
+    const elem = document.getElementsByClassName("bg-modal")[0];
+    elem.style.display = 'none';
 }
 
 const renderClassObj = (day, name, start, fin, prevfin) => {
     let wow = "wow"
     document.getElementsByClassName("classesDisplay")[0].getElementsByTagName('div')[day].innerHTML = `
-        <div class = "classObj" style = "padding : ${start - prevfin}; background-color:${getRandomColor()}">hello</div>
+        <div class = "classObj" style = "padding : ${start - prevfin}; background-color:${getRandomColor()}" onClick = displaySubjectInfo()>hello</div>
     `;
 }
 
@@ -41,7 +53,11 @@ const getRandomColor = () => {
     }
     return color;
 }
+const hello = () => {
+    console.log("hello?");
+}
 
 const classData = fetchClassData();
+
 
 
