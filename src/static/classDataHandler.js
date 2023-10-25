@@ -35,11 +35,11 @@ async function fetchClassData(callback) {
     return data;
 }
 
-async function fetchClassData(uniqueId) {
-    const res = await fetch("http://localhost:555/classes/" + uniqueId)
-    let data = await res.json()
-    return data;
-}
+// async function fetchClassData(uniqueId) {
+//     const res = await fetch("http://localhost:555/classes/" + uniqueId)
+//     let data = await res.json()
+//     return data;
+// }
 
 function insertClassData(classData){
     console.log(classData);
