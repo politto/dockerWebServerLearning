@@ -254,7 +254,6 @@ button.index2#howto-button:hover {
     background: #fff;
     padding: 10px 15px;
     color: #333;
-    display: none; 
     transition : transform 0.4s, top 0.4s;
     font-weight: bolder;
     text-transform: uppercase;
