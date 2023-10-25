@@ -19,8 +19,24 @@ async function getClassData() {
     }
 }
 
+async function getClassData(uniqueId) {
+    const ret = [];
+    try {
+        const classData = await fetchClassData(uniqueId);
+        return classData;
+    } catch (error) {
+        console.error("Error fetching class data:", error);
+    }
+}
+
 async function fetchClassData(callback) {
     const res = await fetch("http://localhost:555/classes")
+    let data = await res.json()
+    return data;
+}
+
+async function fetchClassData(uniqueId) {
+    const res = await fetch("http://localhost:555/classes/" + uniqueId)
     let data = await res.json()
     return data;
 }
