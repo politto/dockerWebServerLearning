@@ -6,9 +6,15 @@ async function fetchClassData() {
     return data;
 }
 
-async function insertClassData() {
+function insertClassData() {
+    let classesData = fetchClassData();
+    let day = "";
     for (i = 0; i < 7; i++){
-        
+        let dataEachDay = getClassDataByDay(classesData, i);
+        let last
+        for(j = 0; j < dataEachDay.length; j++) {
+            renderClassObj
+        }
     }
 }
 
@@ -19,8 +25,15 @@ const renderClassObj = (day, name, start, fin, prevfin) => {
     `;
 }
 
+const getClassDataByDay = (dataArr, day) => {
+    let ret = [];
+    for (let i = 0; i < dataArr.length; i++) {
+        if (dataArr[i].classDay === day) ret.push(dataArr[i]);
+    }
+    return ret;
+} 
 
-const getRandomColor = () {
+const getRandomColor = () => {
     const letters = '56789ABCDEF';
     let color = '#';
     for (let i = 0; i < 6; i++) {
@@ -31,4 +44,4 @@ const getRandomColor = () {
 
 const classData = fetchClassData();
 
-renderDayRow();
+

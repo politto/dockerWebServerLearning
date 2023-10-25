@@ -69,6 +69,16 @@ app.get('/classes', async (req, res) => {
         res.status(500).send(err.message);
     }
 })
+app.get('/classes/:id', async (req, res) => {
+  try {
+      let classesInDb = await Classes.findById(req.params.id);
+      if (!classesInDb) throw new Error('Class not found');
+      res.json(classesInDb);
+  }
+  catch (err) {
+      res.status(500).send(err.message);
+  }
+})
 
 app.post('/classes', async (req, res) => {
     try {
@@ -82,7 +92,7 @@ app.post('/classes', async (req, res) => {
     }
 })
 
-app.put('/classes:id', async (req, res) => {
+app.put('/classes/:id', async (req, res) => {
     try {
         const klass = await Classes.findByIdAndUpdate(req.params.id, req.body, {new: true});
         if (!klass) throw new Error("Class not found");
@@ -94,7 +104,7 @@ app.put('/classes:id', async (req, res) => {
     }
 })
 
-app.delete('/classes:id', async (req, res) => {
+app.delete('/classes/:id', async (req, res) => {
     try {
         const klass = await Classes.findByIdAndDelete(req.params.id);
         if (!klass) throw new Error("Class not found");
