@@ -56,6 +56,9 @@ app.get('/scriptSEC.js', function(req, res) {
 app.get('/modalStyle.css', function(req, res) {
   res.sendFile('modalStyle.css', { root: "./src/static"});
 });
+app.get('/index.html', function(req, res) {
+  res.sendFile('index.html', { root: "./src/static"});
+});
 
 app.use(express.json());
 

@@ -169,7 +169,7 @@ function renderClassObj(id, classid, name, day, start, fin, prevfin){
     if (prevfin > 0) prevfin = (prevfin - 8);
     let wow = "wow"
     console.log(start + " " + fin + " " + prevfin + " " + day);
-    document.getElementsByClassName("classesDisplay")[0].getElementsByClassName('dayRow')[parseInt(day)].innerHTML = `
+    document.getElementsByClassName("classesDisplay")[0].getElementsByClassName('dayRow')[parseInt(day)].innerHTML += `
         <div dataId = ${id} classId = ${classid} class = "classObj" 
         style = "margin-left: ${(start - prevfin) * (width / 11)}px; width: ${(fin - start) * (width / 11)}px; background-color:${getRandomColor()}" >${name}</div>
     `;
