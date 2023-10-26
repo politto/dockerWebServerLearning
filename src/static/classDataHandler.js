@@ -1,28 +1,30 @@
-// // 
-// const classData = getClassData().then(classData => {
-//     insertClassData(classData);
-// });
 
-const classData = [{
-    "_id": "65393f653d6a28fcdf458ba9",
-    "classId": "1",
-    "section": "2",
-    "subject": "Business analysis",
-    "classDay": "4",
-    "startTime": "13.00",
-    "endTime": "16.00",
-    "__v": 0
-},    {
-    "_id": "65394e01bf3ab6abaa439f1a",
-    "classId": "1",
-    "section": "2",
-    "subject": "Linear algebra",
-    "classDay": "2",
-    "startTime": "09.00",
-    "endTime": "12.00",
-    "__v": 0
-}];
-insertClassData(classData);
+const classData = getClassData().then(classData => {
+    insertClassDataToHtml(classData);
+    dataallClass = classData;
+});
+let dataallClass;
+
+// const classData = [{
+//     "_id": "65393f653d6a28fcdf458ba9",
+//     "classId": "1",
+//     "section": "2",
+//     "subject": "Business analysis",
+//     "classDay": "4",
+//     "startTime": "13.00",
+//     "endTime": "16.00",
+//     "__v": 0
+// },    {
+//     "_id": "65394e01bf3ab6abaa439f1a",
+//     "classId": "1",
+//     "section": "2",
+//     "subject": "Linear algebra",
+//     "classDay": "2",
+//     "startTime": "09.00",
+//     "endTime": "12.00",
+//     "__v": 0
+// }];
+// insertClassDataToHtml(classData);
 
 async function getClassData() {
     try {
@@ -33,6 +35,8 @@ async function getClassData() {
     }
 
 }
+
+
 
 // async function getClassData(uniqueId) {
 //     let ret = [];
@@ -47,13 +51,14 @@ async function getClassData() {
 
 function getClassDataByUniqueId(uid) {
     console.log("initial getdata by id :" + uid);
-    for (let i = 0; i < classData.length; i++) {
-        console.log(classData[i]);
-        if (classData[i]._id === uid) {
-            return classData[i]
+    for (let i = 0; i < dataallClass.length; i++) {
+        console.log(dataallClass[i]._id + uid);
+        if (dataallClass[i]._id === uid) {
+            return dataallClass[i]
         }
         
     }
+    return null;
 
 }
 
@@ -63,13 +68,52 @@ async function fetchClassData(callback) {
     return data;
 }
 
+async function fetchTodo(callback) {
+    const res = await fetch("http://localhost:555/todos")
+    let data = await res.json()
+    return data;
+}
+
+async function getTodos() {
+    try {
+        const todoData = await fetchTodo();
+        todoData.forEach((todo) => {
+            renderTodoObject(todo._id, todo.classId, todo.topic, todo.detail, todo.dueDate);
+        });
+    } catch (error) {
+        console.error("Error getting and rendering todos:", error);
+        // const todoData = [{
+        //     "_id": "6537be0144dd15f4bb9833de",
+        //     "todoId": "2",
+        //     "classId": "1",
+        //     "topic": "cs",
+        //     "detail": "test test",
+        //     "dueDate": "1.1.2023",
+        //     "comment": "test twst",
+        //     "__v": 0
+        // },{
+        //     "_id": "6537be0144dd15f4bb9833de",
+        //     "todoId": "2",
+        //     "classId": "2",
+        //     "topic": "css",
+        //     "detail": "test test",
+        //     "dueDate": "1.1.2023",
+        //     "comment": "test twst",
+        //     "__v": 0
+        // }]
+        // todoData.forEach((todo) => {
+        //     renderTodoObject(todo._id, todo.classId, todo.topic, todo.detail, todo.dueDate);
+        // });
+    }
+}
+
 // async function fetchClassData(uniqueId) {
 //     const res = await fetch("http://localhost:555/classes/" + uniqueId)
 //     let data = await res.json()
 //     return data;
 // }
 
-function insertClassData(classData){
+function insertClassDataToHtml(classData){
     console.log(classData);
     classesData = classData;
     let i = 0;
@@ -105,15 +149,20 @@ function convertDeciMinToNormal(time){
 }
 
 function getClassDataByDay(dataArr, day) {
+    const getSection = document.getElementsByClassName('bg-primary')[0].getElementsByTagName('h2')[0].getElementsByTagName('b')[0];
+    console.log(getSection);
+    let sect = document.getElementsByClassName('bg-primary')[0].getElementsByTagName('h2')[0] === '1'? 1: 2; 
+    console.log(sect);
     let ret = [];
     for (let i = 0; i < dataArr.length; i++) {
+        // if (parseInt(dataArr[i].classDay) === day && parseInt(dataArr[i].section) === sect) ret.push(dataArr[i]);
         if (parseInt(dataArr[i].classDay) === day) ret.push(dataArr[i]);
     }
     return ret;
 } 
 
 function renderClassObj(id, classid, name, day, start, fin, prevfin){
-    let width = document.getElementsByClassName("classesDisplay")[0].getElementsByTagName('div')[0].offsetWidth;
+    let width = document.getElementsByClassName("classesDisplay")[0].getElementsByClassName('dayRow')[0].offsetWidth;
     console.log(width);
     start = (start - 8);
     fin = (fin - 8);
@@ -122,22 +171,33 @@ function renderClassObj(id, classid, name, day, start, fin, prevfin){
     console.log(start + " " + fin + " " + prevfin + " " + day);
     document.getElementsByClassName("classesDisplay")[0].getElementsByClassName('dayRow')[parseInt(day)].innerHTML = `
         <div dataId = ${id} classId = ${classid} class = "classObj" 
-        style = "margin-left: ${(start - prevfin) /100 * width * 1.3}%; width: ${(fin - start) / 100 *width * 1.3}%; background-color:${getRandomColor()}" >${name}</div>
+        style = "margin-left: ${(start - prevfin) * (width / 11)}px; width: ${(fin - start) * (width / 11)}px; background-color:${getRandomColor()}" >${name}</div>
     `;
     
 }
 
 function renderTodoObject(todoId, classId, topic, detail, dueDate){
-    const renderPlane = document.getElementsByClassName("assignmet")[0];
-    const dueDateFormatted = dueDate.getDate() + "/" + (dueDate.getMonth() + 1) + "/" + dueDate.getFullYear();
+
+    const renderPlane = document.getElementsByClassName("assignment")[1];
+    console.log(dueDate + " " + todoId);
     renderPlane.innerHTML = `
         <div todoId = ${todoId}>
-            <div>${topic}}</div>
+            <div>${topic}</div>
             <div>${detail}</div>
-            <div>${dueDateFormatted}</div>
-            <div onClick = "hideTodoObject(${todoId})">delete</div>
+            <div>${dueDate}</div>
+            <div onClick = hideTodoObject('${todoId}')>delete</div>
         </div>
     `
+
+}
+
+function hideTodoObject(id){
+    let divs = document.getElementsByClassName('assignment')[1].getElementsByTagName('div');
+    let i = 0;
+    while (divs[i] != undefined) {
+        if (divs[i].getAttribute('todoId') === id) return divs[i].style.display = 'none';
+    }
+    
 
 }
 
@@ -172,4 +232,5 @@ buttonTodoAdd.addEventListener('click', (e) => {
   })
     .catch(err => console.log(err));
 })
+
 
