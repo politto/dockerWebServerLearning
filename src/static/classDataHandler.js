@@ -1,6 +1,6 @@
-// // 
+// 
 // const classData = getClassData().then(classData => {
-//     insertClassData(classData);
+//     insertClassDataToHtml(classData);
 // });
 
 const classData = [{
@@ -22,7 +22,7 @@ const classData = [{
     "endTime": "12.00",
     "__v": 0
 }];
-insertClassData(classData);
+insertClassDataToHtml(classData);
 
 async function getClassData() {
     try {
@@ -33,6 +33,8 @@ async function getClassData() {
     }
 
 }
+
+
 
 // async function getClassData(uniqueId) {
 //     let ret = [];
@@ -63,13 +65,43 @@ async function fetchClassData(callback) {
     return data;
 }
 
+async function fetchTodo(callback) {
+    const res = await fetch("http://localhost:555/todos")
+    let data = await res.json()
+    return data;
+}
+
+async function getTodos() {
+    try {
+        const todoData = await fetchTodo();
+        todoData.forEach((todo) => {
+            renderTodoObject(todo._id, todo.classId, todo.topic, todo.detail, todo.dueDate);
+        });
+    } catch (error) {
+        console.error("Error getting and rendering todos:", error);
+        const todoData = [{
+            "_id": "6537be0144dd15f4bb9833de",
+            "todoId": "2",
+            "classId": "1",
+            "topic": "cs",
+            "detail": "test test",
+            "dueDate": "1.1.2023",
+            "comment": "test twst",
+            "__v": 0
+        }]
+        todoData.forEach((todo) => {
+            renderTodoObject(todo._id, todo.classId, todo.topic, todo.detail, todo.dueDate);
+        });
+    }
+}
+
 // async function fetchClassData(uniqueId) {
 //     const res = await fetch("http://localhost:555/classes/" + uniqueId)
 //     let data = await res.json()
 //     return data;
 // }
 
-function insertClassData(classData){
+function insertClassDataToHtml(classData){
     console.log(classData);
     classesData = classData;
     let i = 0;
@@ -105,8 +137,13 @@ function convertDeciMinToNormal(time){
 }
 
 function getClassDataByDay(dataArr, day) {
+    const getSection = document.getElementsByClassName('bg-primary')[0].getElementsByTagName('h2')[0];
+    console.log(getSection);
+    let sect = document.getElementsByClassName('bg-primary')[0].getElementsByTagName('h2')[0] === 'Section 1'? 1: 2; 
+    console.log(sect);
     let ret = [];
     for (let i = 0; i < dataArr.length; i++) {
+        // if (parseInt(dataArr[i].classDay) === day && parseInt(dataArr[i].section) === sect) ret.push(dataArr[i]);
         if (parseInt(dataArr[i].classDay) === day) ret.push(dataArr[i]);
     }
     return ret;
@@ -128,13 +165,14 @@ function renderClassObj(id, classid, name, day, start, fin, prevfin){
 }
 
 function renderTodoObject(todoId, classId, topic, detail, dueDate){
-    const renderPlane = document.getElementsByClassName("assignmet")[0];
-    const dueDateFormatted = dueDate.getDate() + "/" + (dueDate.getMonth() + 1) + "/" + dueDate.getFullYear();
+
+    const renderPlane = document.getElementsByClassName("assignment")[1];
+    console.log(dueDate + " " + todoId);
     renderPlane.innerHTML = `
         <div todoId = ${todoId}>
-            <div>${topic}}</div>
+            <div>${topic}</div>
             <div>${detail}</div>
-            <div>${dueDateFormatted}</div>
+            <div>${dueDate}</div>
             <div onClick = "hideTodoObject(${todoId})">delete</div>
         </div>
     `
@@ -172,4 +210,5 @@ buttonTodoAdd.addEventListener('click', (e) => {
   })
     .catch(err => console.log(err));
 })
+
 
