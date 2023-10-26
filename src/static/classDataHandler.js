@@ -3,26 +3,26 @@
 //     insertClassDataToHtml(classData);
 // });
 
-// const classData = [{
-//     "_id": "65393f653d6a28fcdf458ba9",
-//     "classId": "1",
-//     "section": "1",
-//     "subject": "Business analysis",
-//     "classDay": "4",
-//     "startTime": "13.00",
-//     "endTime": "16.00",
-//     "__v": 0
-// },    {
-//     "_id": "65394e01bf3ab6abaa439f1a",
-//     "classId": "1",
-//     "section": "2",
-//     "subject": "Linear algebra",
-//     "classDay": "2",
-//     "startTime": "09.00",
-//     "endTime": "12.00",
-//     "__v": 0
-// }];
-// insertClassDataToHtml(classData);
+const classData = [{
+    "_id": "65393f653d6a28fcdf458ba9",
+    "classId": "1",
+    "section": "2",
+    "subject": "Business analysis",
+    "classDay": "4",
+    "startTime": "13.00",
+    "endTime": "16.00",
+    "__v": 0
+},    {
+    "_id": "65394e01bf3ab6abaa439f1a",
+    "classId": "1",
+    "section": "2",
+    "subject": "Linear algebra",
+    "classDay": "2",
+    "startTime": "09.00",
+    "endTime": "12.00",
+    "__v": 0
+}];
+insertClassDataToHtml(classData);
 
 async function getClassData() {
     try {
@@ -75,10 +75,23 @@ async function getTodos() {
     try {
         const todoData = await fetchTodo();
         todoData.forEach((todo) => {
-            renderTodoObject(todo._id, todo.classId, todo.topic, todo.detail, new Date(todo.dueDate));
+            renderTodoObject(todo._id, todo.classId, todo.topic, todo.detail, todo.dueDate);
         });
     } catch (error) {
         console.error("Error getting and rendering todos:", error);
+        const todoData = [{
+            "_id": "6537be0144dd15f4bb9833de",
+            "todoId": "2",
+            "classId": "1",
+            "topic": "cs",
+            "detail": "test test",
+            "dueDate": "1.1.2023",
+            "comment": "test twst",
+            "__v": 0
+        }]
+        todoData.forEach((todo) => {
+            renderTodoObject(todo._id, todo.classId, todo.topic, todo.detail, todo.dueDate);
+        });
     }
 }
 
@@ -152,13 +165,14 @@ function renderClassObj(id, classid, name, day, start, fin, prevfin){
 }
 
 function renderTodoObject(todoId, classId, topic, detail, dueDate){
-    const renderPlane = document.getElementsByClassName("assignmet")[0];
-    const dueDateFormatted = dueDate.getDate() + "/" + (dueDate.getMonth() + 1) + "/" + dueDate.getFullYear();
+
+    const renderPlane = document.getElementsByClassName("assignment")[1];
+    console.log(dueDate + " " + todoId);
     renderPlane.innerHTML = `
         <div todoId = ${todoId}>
-            <div>${topic}}</div>
+            <div>${topic}</div>
             <div>${detail}</div>
-            <div>${dueDateFormatted}</div>
+            <div>${dueDate}</div>
             <div onClick = "hideTodoObject(${todoId})">delete</div>
         </div>
     `

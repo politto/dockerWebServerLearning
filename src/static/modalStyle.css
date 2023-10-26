@@ -69,7 +69,7 @@
     max-width: 30%;
     /* background-color: blueviolet; */
 }
-.assignment > div:nth-child(1){
+.assignment:nth-child(2){
     background-color: blueviolet;
     color: #fff;
 }
