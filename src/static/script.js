@@ -1,5 +1,5 @@
-const openModalButtons = document.querySelectorAll('[data-modal-target]')
-const closeModalButtons = document.querySelectorAll('[data-close-button]')
+// const openModalButtons = document.querySelectorAll('[data-modal-target]')
+// const closeModalButtons = document.querySelectorAll('[data-close-button]')
 const overlay = document.getElementById('overlay')
 
 function openPopup() {
@@ -36,27 +36,28 @@ function openSetting(){
   // document.getElementsByClassName("modal")[0].classList.add('active');
 }
 function closeSetting(){
+  console.log(document.getElementsByClassName("modal")[0]);
   document.getElementsByClassName("modal")[0].style.display = 'none';
-  console.log("dfsdf");
-  // document.getElementsByClassName("modal")[0].classList.add('active');
+
 }
 
-function closeSetting(set) {
-  if (set == null) return
-  set.classList.remove('active')
-  overlay.classList.remove('active')
-}
+// function closeSetting(set) {
+//   if (set == null) return
+//   set.classList.remove('active')
+//   overlay.classList.remove('active')
+// }
 
-overlay.addEventListener('click', () => {
-  const over = document.querySelectorAll('.modal.active')
- over.forEach(set => {
-    closeSetting(set)
-  })
-})
+// overlay.addEventListener('click', () => {
+//   const over = document.querySelectorAll('.modal.active')
+//  over.forEach(set => {
+//     closeSetting(set)
+//   })
+// })
 
 
 // code for change image background
-const body = document.getElementById("bg");
+const body = document.body;
+console.log(document.body.style)
 const toggleSwitch = document.getElementById("backgroundToggle");
 
 // Check if there's a saved background choice in localStorage
