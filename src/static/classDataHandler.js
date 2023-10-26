@@ -1,28 +1,28 @@
-// // 
+// 
 // const classData = getClassData().then(classData => {
 //     insertClassDataToHtml(classData);
 // });
 
-const classData = [{
-    "_id": "65393f653d6a28fcdf458ba9",
-    "classId": "1",
-    "section": "2",
-    "subject": "Business analysis",
-    "classDay": "4",
-    "startTime": "13.00",
-    "endTime": "16.00",
-    "__v": 0
-},    {
-    "_id": "65394e01bf3ab6abaa439f1a",
-    "classId": "1",
-    "section": "2",
-    "subject": "Linear algebra",
-    "classDay": "2",
-    "startTime": "09.00",
-    "endTime": "12.00",
-    "__v": 0
-}];
-insertClassDataToHtml(classData);
+// const classData = [{
+//     "_id": "65393f653d6a28fcdf458ba9",
+//     "classId": "1",
+//     "section": "1",
+//     "subject": "Business analysis",
+//     "classDay": "4",
+//     "startTime": "13.00",
+//     "endTime": "16.00",
+//     "__v": 0
+// },    {
+//     "_id": "65394e01bf3ab6abaa439f1a",
+//     "classId": "1",
+//     "section": "2",
+//     "subject": "Linear algebra",
+//     "classDay": "2",
+//     "startTime": "09.00",
+//     "endTime": "12.00",
+//     "__v": 0
+// }];
+// insertClassDataToHtml(classData);
 
 async function getClassData() {
     try {
@@ -33,6 +33,8 @@ async function getClassData() {
     }
 
 }
+
+
 
 // async function getClassData(uniqueId) {
 //     let ret = [];
@@ -61,6 +63,23 @@ async function fetchClassData(callback) {
     const res = await fetch("http://localhost:555/classes")
     let data = await res.json()
     return data;
+}
+
+async function fetchTodo(callback) {
+    const res = await fetch("http://localhost:555/todos")
+    let data = await res.json()
+    return data;
+}
+
+async function getTodos() {
+    try {
+        const todoData = await fetchTodo();
+        todoData.forEach((todo) => {
+            renderTodoObject(todo._id, todo.classId, todo.topic, todo.detail, new Date(todo.dueDate));
+        });
+    } catch (error) {
+        console.error("Error getting and rendering todos:", error);
+    }
 }
 
 // async function fetchClassData(uniqueId) {
@@ -105,8 +124,13 @@ function convertDeciMinToNormal(time){
 }
 
 function getClassDataByDay(dataArr, day) {
+    const getSection = document.getElementsByClassName('bg-primary')[0].getElementsByTagName('h2')[0];
+    console.log(getSection);
+    let sect = document.getElementsByClassName('bg-primary')[0].getElementsByTagName('h2')[0] === 'Section 1'? 1: 2; 
+    console.log(sect);
     let ret = [];
     for (let i = 0; i < dataArr.length; i++) {
+        // if (parseInt(dataArr[i].classDay) === day && parseInt(dataArr[i].section) === sect) ret.push(dataArr[i]);
         if (parseInt(dataArr[i].classDay) === day) ret.push(dataArr[i]);
     }
     return ret;
@@ -140,6 +164,7 @@ function renderTodoObject(todoId, classId, topic, detail, dueDate){
     `
 
 }
+
 
 
 
