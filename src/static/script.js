@@ -2,6 +2,15 @@ const openModalButtons = document.querySelectorAll('[data-modal-target]')
 const closeModalButtons = document.querySelectorAll('[data-close-button]')
 const overlay = document.getElementById('overlay')
 
+function openPopup() {
+  console.log(popup);
+  popup.classList.add("open-popup");
+}
+
+function closePopup() {
+  popup.classList.remove("open-popup");
+}
+
 openModalButtons.forEach(button => {
   button.addEventListener('click', () => {
     const modal = document.querySelector(button.dataset.modalTarget)
@@ -34,30 +43,3 @@ overlay.addEventListener('click', () => {
     closeSetting(set)
   })
 })
-
-// code for change image background
-const body = document.body;
-console.log(document.body.style)
-const toggleSwitch = document.getElementById("backgroundToggle");
-
-// Check if there's a saved background choice in localStorage
-const savedBackground = localStorage.getItem("backgroundChoice");
-
-// Set the initial background based on the saved choice
-if (savedBackground === "image1") {
-    body.style.backgroundImage = "url('img/background_night.png')";
-    toggleSwitch.checked = true; // Set the switch to "on"
-} else {
-    body.style.backgroundImage = "url('img/background_day.png')";
-    toggleSwitch.checked = false; // Set the switch to "off"
-}
-
-toggleSwitch.addEventListener("change", function() {
-    if (this.checked) {
-        body.style.backgroundImage = "url('img/background_night.png')";
-        localStorage.setItem("backgroundChoice", "image1"); // Save the choice
-    } else {
-        body.style.backgroundImage = "url('img/background_day.png')";
-        localStorage.setItem("backgroundChoice", "image2"); // Save the choice
-    }
-});

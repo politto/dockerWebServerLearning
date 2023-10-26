@@ -5,8 +5,7 @@ const todoSchema = new mongoose.Schema({
     classId: { type: String, required: true }, 
     topic: { type: String, required: true }, 
     detail: String, 
-    dueDate: { type: String, required: true },
-    comment: String
+    dueDate: { type: String, required: true } 
 });
 
 const Todo = mongoose.model('Todo', todoSchema);

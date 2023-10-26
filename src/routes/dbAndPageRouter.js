@@ -8,7 +8,6 @@ const port = 555;
 const connectDBs = require('../persistance/db');
 const Classes = require('../persistance/classes');
 const Todo = require('../persistance/todo');
-const Comment = require('../persistance/comment')
 
 
 app.use(express.static(htmlPath));
@@ -41,21 +40,10 @@ app.get('/classDataHandler.js', function(req, res) {
   res.sendFile('classDataHandler.js', { root: "./src/static"});
 });
 
-app.get('/classDataVisual.js', function(req, res) {
-  res.sendFile('classDataVisual.js', { root: "./src/static"});
-});
-
 app.get('/classTableStyle.css', function(req, res) {
   res.sendFile('classTableStyle.css', { root: "./src/static"});
 });
 
-app.get('/scriptSEC.js', function(req, res) {
-  res.sendFile('scriptSEC.js', { root: "./src/static"});
-});
-
-app.get('/modalStyle.css', function(req, res) {
-  res.sendFile('modalStyle.css', { root: "./src/static"});
-});
 
 app.use(express.json());
 
@@ -81,16 +69,6 @@ app.get('/classes', async (req, res) => {
         res.status(500).send(err.message);
     }
 })
-app.get('/classes/:id', async (req, res) => {
-  try {
-      let classesInDb = await Classes.findById(req.params.id);
-      if (!classesInDb) throw new Error('Class not found');
-      res.json(classesInDb);
-  }
-  catch (err) {
-      res.status(500).send(err.message);
-  }
-})
 
 app.post('/classes', async (req, res) => {
     try {
@@ -104,7 +82,7 @@ app.post('/classes', async (req, res) => {
     }
 })
 
-app.put('/classes/:id', async (req, res) => {
+app.put('/classes:id', async (req, res) => {
     try {
         const klass = await Classes.findByIdAndUpdate(req.params.id, req.body, {new: true});
         if (!klass) throw new Error("Class not found");
@@ -116,7 +94,7 @@ app.put('/classes/:id', async (req, res) => {
     }
 })
 
-app.delete('/classes/:id', async (req, res) => {
+app.delete('/classes:id', async (req, res) => {
     try {
         const klass = await Classes.findByIdAndDelete(req.params.id);
         if (!klass) throw new Error("Class not found");
@@ -167,46 +145,6 @@ app.get('/todos', async (req, res) => {
       res.status(500).send(err.message);
     }
   });
-//CommentAPI
-app.get('/comments', async (req, res) => {
-  try {
-    const comments = await Comment.find();
-    res.json(comments);
-  } catch (err) {
-    res.status(500).send(err.message);
-  }
-});
-
-app.post('/comments', async (req, res) => {
-  try {
-    const { commentId, classId, comment, commentDate } = req.body;
-    const comments = new Comment({ commentId, classId, comment, commentDate });
-    await comments.save();
-    res.json({ success: true });
-  } catch (err) {
-    res.status(500).send(err.message);
-  }
-});
-
-app.put('/comments/:id', async (req, res) => {
-  try {
-    const comments = await Comment.findByIdAndUpdate(req.params.id, req.body, { new: true });
-    if (!comments) throw new Error("Comment not found");
-    res.json({ success: true });
-  } catch (err) {
-    res.status(500).send(err.message);
-  }
-});
-
-app.delete('/comments/:id', async (req, res) => {
-  try {
-    const comments = await Comment.findByIdAndDelete(req.params.id);
-    if (!comments) throw new Error("Comment not found");
-    res.json({ success: true });
-  } catch (err) {
-    res.status(500).send(err.message);
-  }
-});
 
 app.listen(port, () => {
     console.log("API server started on port " + port);
