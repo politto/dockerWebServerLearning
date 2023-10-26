@@ -53,6 +53,10 @@ app.get('/scriptSEC.js', function(req, res) {
   res.sendFile('scriptSEC.js', { root: "./src/static"});
 });
 
+app.get('/modalStyle.css', function(req, res) {
+  res.sendFile('modalStyle.css', { root: "./src/static"});
+});
+
 app.use(express.json());
 
 connectDBs();

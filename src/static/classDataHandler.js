@@ -1,13 +1,28 @@
-// const { resolve } = require("path");
-
-console.log("hello");
-const classData = getClassData().then(classData => {
-    insertClassData(classData);
-});
-
-// const classData = [{"_id":"6538d294534e384a74fc1945","classId":"0","section":"1","subject":"Business analysis","classDay":"5","startTime":"9.00","endTime":"12.00","__v":0}];
-// console.log(classData);
-// insertClassdata(classData);
+// 
+// const classData = getClassData().then(classData => {
+//     insertClassData(classData);
+// });
+// 
+const classData = [{
+    "_id": "65393f653d6a28fcdf458ba9",
+    "classId": "1",
+    "section": "2",
+    "subject": "Business analysis",
+    "classDay": "4",
+    "startTime": "13.00",
+    "endTime": "16.00",
+    "__v": 0
+},    {
+    "_id": "65394e01bf3ab6abaa439f1a",
+    "classId": "1",
+    "section": "2",
+    "subject": "Linear algebra",
+    "classDay": "2",
+    "startTime": "09.00",
+    "endTime": "12.00",
+    "__v": 0
+}];
+insertClassData(classData);
 
 async function getClassData() {
     const ret = [];
@@ -44,6 +59,7 @@ async function fetchClassData(callback) {
 function insertClassData(classData){
     console.log(classData);
     classesData = classData;
+    let i = 0;
     for (i = 0; i < 7; i++){
         let dataEachDay = getClassDataByDay(classesData, i);
         // console.log(dataEachDay);
@@ -58,10 +74,13 @@ function insertClassData(classData){
             lastend += each.endTime;
         }
 
-        for(j = 0; j < dataEachDay.length; j++) {
-            document.getElementsByClassName("classObj")[j].addEventListener("click", displaySubjectInfo);
-        }
+    }
 
+    i = 0;
+    while (document.getElementsByClassName('classObj')[i] != undefined){
+        document.getElementsByClassName('classObj')[i].addEventListener('click', displaySubjectInfo);
+        i++;
+        // console.log(i);
     }
 }
 

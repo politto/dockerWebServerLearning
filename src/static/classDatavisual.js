@@ -11,12 +11,8 @@ const hello = () => {
 }
 
 const displaySubjectInfo = (e) => {
-    // console.log(document.getElementsByClassName("bg-modal")[0]);
     const elem = document.getElementsByClassName("bg-modal")[0];
     elem.style.display = 'flex';
-
-    // const clickedElemDataId = this.target.dataid;
-    // elem.getElementsByClassName("subjectName")[0].innerHTML = e.target.getAttribute('dataid');
     elem.getElementsByClassName("subjectName")[0].innerHTML = e.target.textContent;
 
 
