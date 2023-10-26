@@ -22,7 +22,7 @@
 
 .modal-content > div {
     display: flex;
-    /* height: 80px; */
+    height: 80px;
 }
 
 .modal-content > div:nth-child(1) {
@@ -59,12 +59,17 @@
     /* background-color: antiquewhite; */
     display: flex;
     flex-direction: row;
-    height:350px;
+}
+
+.assignment:nth-child(3){
+    flex-direction: column;
+    height: 350px;
 }
 
 .assignment > div > div{
     flex-grow: 1;
     text-align:center;
+    padding:20px 0;
     min-height: 60px;
     max-width: 30%;
     /* background-color: blueviolet; */
