@@ -1,28 +1,30 @@
-// 
-// const classData = getClassData().then(classData => {
-//     insertClassDataToHtml(classData);
-// });
 
-const classData = [{
-    "_id": "65393f653d6a28fcdf458ba9",
-    "classId": "1",
-    "section": "2",
-    "subject": "Business analysis",
-    "classDay": "4",
-    "startTime": "13.00",
-    "endTime": "16.00",
-    "__v": 0
-},    {
-    "_id": "65394e01bf3ab6abaa439f1a",
-    "classId": "1",
-    "section": "2",
-    "subject": "Linear algebra",
-    "classDay": "2",
-    "startTime": "09.00",
-    "endTime": "12.00",
-    "__v": 0
-}];
-insertClassDataToHtml(classData);
+const classData = getClassData().then(classData => {
+    insertClassDataToHtml(classData);
+    dataallClass = classData;
+});
+let dataallClass;
+
+// const classData = [{
+//     "_id": "65393f653d6a28fcdf458ba9",
+//     "classId": "1",
+//     "section": "2",
+//     "subject": "Business analysis",
+//     "classDay": "4",
+//     "startTime": "13.00",
+//     "endTime": "16.00",
+//     "__v": 0
+// },    {
+//     "_id": "65394e01bf3ab6abaa439f1a",
+//     "classId": "1",
+//     "section": "2",
+//     "subject": "Linear algebra",
+//     "classDay": "2",
+//     "startTime": "09.00",
+//     "endTime": "12.00",
+//     "__v": 0
+// }];
+// insertClassDataToHtml(classData);
 
 async function getClassData() {
     try {
@@ -49,13 +51,14 @@ async function getClassData() {
 
 function getClassDataByUniqueId(uid) {
     console.log("initial getdata by id :" + uid);
-    for (let i = 0; i < classData.length; i++) {
-        console.log(classData[i]);
-        if (classData[i]._id === uid) {
-            return classData[i]
+    for (let i = 0; i < dataallClass.length; i++) {
+        console.log(dataallClass[i]._id + uid);
+        if (dataallClass[i]._id === uid) {
+            return dataallClass[i]
         }
         
     }
+    return null;
 
 }
 
@@ -79,28 +82,28 @@ async function getTodos() {
         });
     } catch (error) {
         console.error("Error getting and rendering todos:", error);
-        const todoData = [{
-            "_id": "6537be0144dd15f4bb9833de",
-            "todoId": "2",
-            "classId": "1",
-            "topic": "cs",
-            "detail": "test test",
-            "dueDate": "1.1.2023",
-            "comment": "test twst",
-            "__v": 0
-        },{
-            "_id": "6537be0144dd15f4bb9833de",
-            "todoId": "2",
-            "classId": "2",
-            "topic": "css",
-            "detail": "test test",
-            "dueDate": "1.1.2023",
-            "comment": "test twst",
-            "__v": 0
-        }]
-        todoData.forEach((todo) => {
-            renderTodoObject(todo._id, todo.classId, todo.topic, todo.detail, todo.dueDate);
-        });
+        // const todoData = [{
+        //     "_id": "6537be0144dd15f4bb9833de",
+        //     "todoId": "2",
+        //     "classId": "1",
+        //     "topic": "cs",
+        //     "detail": "test test",
+        //     "dueDate": "1.1.2023",
+        //     "comment": "test twst",
+        //     "__v": 0
+        // },{
+        //     "_id": "6537be0144dd15f4bb9833de",
+        //     "todoId": "2",
+        //     "classId": "2",
+        //     "topic": "css",
+        //     "detail": "test test",
+        //     "dueDate": "1.1.2023",
+        //     "comment": "test twst",
+        //     "__v": 0
+        // }]
+        // todoData.forEach((todo) => {
+        //     renderTodoObject(todo._id, todo.classId, todo.topic, todo.detail, todo.dueDate);
+        // });
     }
 }
 
@@ -159,7 +162,7 @@ function getClassDataByDay(dataArr, day) {
 } 
 
 function renderClassObj(id, classid, name, day, start, fin, prevfin){
-    let width = document.getElementsByClassName("classesDisplay")[0].getElementsByTagName('div')[0].offsetWidth;
+    let width = document.getElementsByClassName("classesDisplay")[0].getElementsByClassName('dayRow')[0].offsetWidth;
     console.log(width);
     start = (start - 8);
     fin = (fin - 8);
@@ -168,7 +171,7 @@ function renderClassObj(id, classid, name, day, start, fin, prevfin){
     console.log(start + " " + fin + " " + prevfin + " " + day);
     document.getElementsByClassName("classesDisplay")[0].getElementsByClassName('dayRow')[parseInt(day)].innerHTML = `
         <div dataId = ${id} classId = ${classid} class = "classObj" 
-        style = "margin-left: ${(start - prevfin) /100 * width * 1.3}%; width: ${(fin - start) / 100 *width * 1.3}%; background-color:${getRandomColor()}" >${name}</div>
+        style = "margin-left: ${(start - prevfin) * (width / 11)}px; width: ${(fin - start) * (width / 11)}px; background-color:${getRandomColor()}" >${name}</div>
     `;
     
 }

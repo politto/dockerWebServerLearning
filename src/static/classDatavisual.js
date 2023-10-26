@@ -14,10 +14,10 @@ const displaySubjectInfo = (e) => {
     const bgModal = document.getElementsByClassName("bg-modal")[0];
     const dataid = e.target.getAttribute('dataid');
     bgModal.style.display = 'flex';
-    // console.log(getClassDataByUniqueId(dataid));
+    console.log(getClassDataByUniqueId(dataid));
 
     bgModal.getElementsByClassName("subjectName")[0].innerHTML = getClassDataByUniqueId(dataid).subject;
-    getTodos();
+    
     document.getElementsByClassName("buttonTEST")[0].setAttribute('classid', getClassDataByUniqueId(dataid).classId);
 
 
