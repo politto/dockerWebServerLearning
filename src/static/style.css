@@ -284,6 +284,50 @@ button.index2#howto-button:hover {
     color: #fff;
 }
 
+.button-todo-add{
+    background: #fff;
+    padding: 10px 15px;
+    color: #333;
+    transition : transform 0.4s, top 0.4s;
+    font-weight: bolder;
+    text-transform: uppercase;
+    font-size: 18px;
+    border-radius: 5px;
+    box-shadow: 6px 6px 29px -4px rgbx(0,0,0,0,0.75);
+    text-decoration: none;
+    transition: 0.4s;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-todo-add:hover{
+    background: #34495e;
+    color: #fff;
+}
+
+.button-todo-close{
+    background: #fff;
+    padding: 10px 15px;
+    color: #333;
+    transition : transform 0.4s, top 0.4s;
+    font-weight: bolder;
+    text-transform: uppercase;
+    font-size: 18px;
+    border-radius: 5px;
+    box-shadow: 6px 6px 29px -4px rgbx(0,0,0,0,0.75);
+    text-decoration: none;
+    transition: 0.4s;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-todo-close:hover{
+    background: #34495e;
+    color: #fff;
+}
+
+
+
 .popupSEC{
     background: rgba(0, 0, 0, 1);
     width: 100%;
