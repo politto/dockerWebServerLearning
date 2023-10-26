@@ -6,8 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="style.css">
-  <script src="index.js"></script>
-  <script defer src="script.js"></script>
 </head>
 
 <body id="bg">
@@ -28,22 +26,25 @@
     </a>
   </header>
 
-  <div class="modal" id="modal">
+  <div class="modal" id="modal" >
     <div class="setting-header">
-      <div class="title">
-        <label class="toggle-label">Night mode</label>
-        <label class="toggle-switch">
-          <input type="checkbox" id="backgroundToggle">
-          <div class="slider"></div>
-        </label>
+        <div class="title">
+            <div>
+                <label class="toggle-label">Night mode</label>
+            </div>
+            <div>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="backgroundToggle">
+                    <div class="slider"></div>
+                </label>
+            </div>
 
-      </div>
-      <button data-close-button class="close-button"><img src="https://cdn-icons-png.flaticon.com/512/7693/7693271.png"
-          alt="Close" class="close">
-        </button>
+        </div>
+        <button data-close-button class="close-button" onclick="closeSetting()"><img
+                src="https://cdn-icons-png.flaticon.com/512/7693/7693271.png" alt="Close" class="close" onclick=""></button>
     </div>
     <div class="setting-body">
-      พรี่โอมสาวเยอะจัดเลยอะ
+        พรี่โอมสาวเยอะจัดเลยอะ
     </div>
   </div>
   <div id="overlay"></div>
@@ -59,5 +60,7 @@
   </div>
 
 </body>
+<script src="index.js"></script>
+<script defer src="script.js"></script>
 
 </html>
