@@ -88,6 +88,15 @@ async function getTodos() {
             "dueDate": "1.1.2023",
             "comment": "test twst",
             "__v": 0
+        },{
+            "_id": "6537be0144dd15f4bb9833de",
+            "todoId": "2",
+            "classId": "2",
+            "topic": "css",
+            "detail": "test test",
+            "dueDate": "1.1.2023",
+            "comment": "test twst",
+            "__v": 0
         }]
         todoData.forEach((todo) => {
             renderTodoObject(todo._id, todo.classId, todo.topic, todo.detail, todo.dueDate);
@@ -173,9 +182,19 @@ function renderTodoObject(todoId, classId, topic, detail, dueDate){
             <div>${topic}</div>
             <div>${detail}</div>
             <div>${dueDate}</div>
-            <div onClick = "hideTodoObject(${todoId})">delete</div>
+            <div onClick = hideTodoObject('${todoId}')>delete</div>
         </div>
     `
+
+}
+
+function hideTodoObject(id){
+    let divs = document.getElementsByClassName('assignment')[1].getElementsByTagName('div');
+    let i = 0;
+    while (divs[i] != undefined) {
+        if (divs[i].getAttribute('todoId') === id) return divs[i].style.display = 'none';
+    }
+    return "not found"
 
 }
 
