@@ -30,29 +30,28 @@ function openSetting(set) {
   set.classList.add('active')
   overlay.classList.add('active')
 }
-
-function openSetting(){
-  document.getElementsByClassName("modal")[0].style.display = 'block';
-  // document.getElementsByClassName("modal")[0].classList.add('active');
-}
-function closeSetting(){
-  console.log(document.getElementsByClassName("modal")[0]);
-  document.getElementsByClassName("modal")[0].style.display = 'none';
-
-}
-
-// function closeSetting(set) {
-//   if (set == null) return
-//   set.classList.remove('active')
-//   overlay.classList.remove('active')
+// 
+// function openSetting(){
+//   document.getElementsByClassName("modal")[0].style.display = 'block';
+//   // document.getElementsByClassName("modal")[0].classList.add('active');
+// }
+// function closeSetting(){
+//   document.getElementsByClassName("modal")[0].style.display = 'none';
+// 
 // }
 
-// overlay.addEventListener('click', () => {
-//   const over = document.querySelectorAll('.modal.active')
-//  over.forEach(set => {
-//     closeSetting(set)
-//   })
-// })
+function closeSetting(set) {
+  if (set == null) return
+  set.classList.remove('active')
+  overlay.classList.remove('active')
+}
+
+overlay.addEventListener('click', () => {
+  const over = document.querySelectorAll('.modal.active')
+ over.forEach(set => {
+    closeSetting(set)
+  })
+})
 
 
 // code for change image background
