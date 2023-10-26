@@ -1,6 +1,6 @@
 // // 
 // const classData = getClassData().then(classData => {
-//     insertClassData(classData);
+//     insertClassDataToHtml(classData);
 // });
 
 const classData = [{
@@ -22,7 +22,7 @@ const classData = [{
     "endTime": "12.00",
     "__v": 0
 }];
-insertClassData(classData);
+insertClassDataToHtml(classData);
 
 async function getClassData() {
     try {
@@ -69,7 +69,7 @@ async function fetchClassData(callback) {
 //     return data;
 // }
 
-function insertClassData(classData){
+function insertClassDataToHtml(classData){
     console.log(classData);
     classesData = classData;
     let i = 0;
