@@ -11,12 +11,16 @@ const hello = () => {
 }
 
 const displaySubjectInfo = (e) => {
-    const elem = document.getElementsByClassName("bg-modal")[0];
-    elem.style.display = 'flex';
-    const name = e.target.getClassDataByUniqueId(e)
-    elem.getElementsByClassName("subjectName")[0].innerHTML = name;
+    const bgModal = document.getElementsByClassName("bg-modal")[0];
+    const dataid = e.target.getAttribute('dataid');
+    bgModal.style.display = 'flex';
+    // console.log(getClassDataByUniqueId(dataid));
 
-    document.getElementsByClassName("buttonTest")[0].setAttribute('dataid', e.id);
+    bgModal.getElementsByClassName("subjectName")[0].innerHTML = getClassDataByUniqueId(dataid).subject;
+    
+    document.getElementsByClassName("buttonTEST")[0].setAttribute('classid', getClassDataByUniqueId(dataid).classId);
+
+
 }
 
 const hideSubjectInfo = () => {

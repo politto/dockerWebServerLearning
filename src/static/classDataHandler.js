@@ -25,31 +25,33 @@ const classData = [{
 insertClassData(classData);
 
 async function getClassData() {
-    const ret = [];
     try {
-        const classData = await fetchClassData();
-        return classData;
+        const cd = await fetchClassData();
+        return cd;
     } catch (error) {
         console.error("Error fetching class data:", error);
     }
+
 }
 
-async function getClassData(uniqueId) {
-    const ret = [];
-    try {
-        const classData = await fetchClassData(uniqueId);
-        return classData;
-    } catch (error) {
-        console.error("Error fetching class data:", error);
-    }
-}
+// async function getClassData(uniqueId) {
+//     let ret = [];
+//     try {
+//         const classData = await fetchClassData(uniqueId);
+//         return ret;
+//     } catch (error) {
+//         console.error("Error fetching class data:", error);
+//     }
+// 
+// }
 
-async function getClassDataByUniqueId(uid) {
+function getClassDataByUniqueId(uid) {
     for (let i = 0; i < classData.length; i++) {
+        console.log(classData[i]);
         if (classData[i]._id === uid) return classData[i]
         
     }
-    console.log("error: class not found");
+
 }
 
 async function fetchClassData(callback) {

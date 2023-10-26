@@ -2,15 +2,6 @@ const openModalButtons = document.querySelectorAll('[data-modal-target]')
 const closeModalButtons = document.querySelectorAll('[data-close-button]')
 const overlay = document.getElementById('overlay')
 
-function openPopup() {
-  console.log(popup);
-  popup.classList.add("open-popup");
-}
-
-function closePopup() {
-  popup.classList.remove("open-popup");
-}
-
 openModalButtons.forEach(button => {
   button.addEventListener('click', () => {
     const modal = document.querySelector(button.dataset.modalTarget)
@@ -30,15 +21,6 @@ function openSetting(set) {
   set.classList.add('active')
   overlay.classList.add('active')
 }
-// 
-// function openSetting(){
-//   document.getElementsByClassName("modal")[0].style.display = 'block';
-//   // document.getElementsByClassName("modal")[0].classList.add('active');
-// }
-// function closeSetting(){
-//   document.getElementsByClassName("modal")[0].style.display = 'none';
-// 
-// }
 
 function closeSetting(set) {
   if (set == null) return
@@ -52,7 +34,6 @@ overlay.addEventListener('click', () => {
     closeSetting(set)
   })
 })
-
 
 // code for change image background
 const body = document.body;
