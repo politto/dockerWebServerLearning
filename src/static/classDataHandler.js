@@ -44,6 +44,14 @@ async function getClassData(uniqueId) {
     }
 }
 
+async function getClassDataByUniqueId(uid) {
+    for (let i = 0; i < classData.length; i++) {
+        if (classData[i]._id === uid) return classData[i]
+        
+    }
+    console.log("error: class not found");
+}
+
 async function fetchClassData(callback) {
     const res = await fetch("http://localhost:555/classes")
     let data = await res.json()

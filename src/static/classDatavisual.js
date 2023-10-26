@@ -13,9 +13,10 @@ const hello = () => {
 const displaySubjectInfo = (e) => {
     const elem = document.getElementsByClassName("bg-modal")[0];
     elem.style.display = 'flex';
-    elem.getElementsByClassName("subjectName")[0].innerHTML = e.target.textContent;
+    const name = e.target.getClassDataByUniqueId(e)
+    elem.getElementsByClassName("subjectName")[0].innerHTML = name;
 
-
+    document.getElementsByClassName("buttonTest")[0].setAttribute('dataid', e.id);
 }
 
 const hideSubjectInfo = () => {
