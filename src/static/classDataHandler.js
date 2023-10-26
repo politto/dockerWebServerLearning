@@ -218,8 +218,8 @@ buttonTodoAdd.addEventListener('click', (e) => {
       todoId: todoId, // FAKE
       classId: document.querySelector('.button-todo-add').getAttribute('classId'),
       topic: document.querySelector('.todo-topic').value,
-      detail: document.querySelector('.todo-detail').value,
-      dueDate: document.querySelector('.todo-dueDate').value,
+      detail: document.querySelector('.todo-dueDate').value,
+      dueDate: document.querySelector('.todo-detail').value,
     })
   })
   .then(res => res.json())
