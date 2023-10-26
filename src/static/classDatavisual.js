@@ -16,7 +16,7 @@ const displaySubjectInfo = (e) => {
     bgModal.style.display = 'flex';
     // console.log(getClassDataByUniqueId(dataid));
 
-    bgModal.getElementsByClassName("subjectName")[0].innerHTML = getClassDataByUniqueId(dataid).subject;
+    bgModal.getElementsByClassName("subjectName")[0].innerHTML = getClassDataByUniqueId(dataid);
     
     document.getElementsByClassName("buttonTEST")[0].setAttribute('classid', getClassDataByUniqueId(dataid).classId);
 

@@ -1,8 +1,8 @@
-// 
+// // 
 // const classData = getClassData().then(classData => {
 //     insertClassData(classData);
 // });
-// 
+
 const classData = [{
     "_id": "65393f653d6a28fcdf458ba9",
     "classId": "1",
@@ -46,9 +46,12 @@ async function getClassData() {
 // }
 
 function getClassDataByUniqueId(uid) {
+    console.log("initial getdata by id :" + uid);
     for (let i = 0; i < classData.length; i++) {
         console.log(classData[i]);
-        if (classData[i]._id === uid) return classData[i]
+        if (classData[i]._id === uid) {
+            return classData[i]
+        }
         
     }
 
