@@ -17,8 +17,8 @@ const displaySubjectInfo = (e) => {
     console.log(getClassDataByUniqueId(dataid));
 
     bgModal.getElementsByClassName("subjectName")[0].innerHTML = getClassDataByUniqueId(dataid).subject;
-    
-    document.getElementsByClassName("buttonTEST")[0].setAttribute('classid', getClassDataByUniqueId(dataid).classId);
+    getTodos();
+    document.getElementsByClassName("button-todo-add")[0].setAttribute('classId', getClassDataByUniqueId(dataid).classId);
 
 
 }

@@ -197,13 +197,40 @@ function hideTodoObject(id){
     while (divs[i] != undefined) {
         if (divs[i].getAttribute('todoId') === id) return divs[i].style.display = 'none';
     }
-    return "not found"
+    
 
 }
 
+let todoId = "0";
+const buttonTodoAdd = document.querySelector('.button-todo-add');
+buttonTodoAdd.addEventListener('click', (e) => {
+  e.preventDefault();
 
+  console.log("button-todo-add clicked");
+  let todoIdNumber = parseInt(todoId,10);
 
-
-
+  fetch('http://localhost:555/todos', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      todoId: todoId, // FAKE
+      classId: document.querySelector('.button-todo-add').getAttribute('classId'),
+      topic: document.querySelector('.todo-topic').value,
+      detail: document.querySelector('.todo-detail').value,
+      dueDate: document.querySelector('.todo-dueDate').value,
+    })
+  })
+  .then(res => res.json())
+  .then(data => {
+    console.log(data);
+    console.log("todo added");
+    todoIdNumber++;
+    todoId = todoIdNumber.toString();
+    location.reload();
+  })
+    .catch(err => console.log(err));
+})
 
 
