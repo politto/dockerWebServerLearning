@@ -1,50 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
-</head>  
-<body>
-    <header  class="index2"> 
-        <h1><b>วิธีการใช้งาน</b></h1>
-        <a href="index.html">
-            <button class="index2" id=home-button>
-                <img src="https://cdn-icons-png.flaticon.com/512/7133/7133312.png" alt="Button Image">
-              </button>
-            </a>
-            <button data-modal-target="#modal">
-                <img src="https://static-00.iconduck.com/assets.00/wrench-icon-2047x2048-jyerjpd9.png" alt="Button Image">
-        </button>  <!--setting -->
-        <a href="index2.html">
-          <button class="index2" id="howto-button">
-            <img src="https://static.thenounproject.com/png/3165598-200.png" alt="Button Image">
-        </button>
-        </a>
-    </header>
-    
-    <div class="modal" id="modal">
-        <div class="setting-header">
-          <div class="title">P.ohm Setting</div>
-          <button data-close-button class="close-button">&times;</button>
-        </div>
-        <!-- <div class="setting-body">c
-          พรี่โอมสาวเยอะจัดเลยอะ
-        </div> -->
-    </div>
-      <div id="overlay"></div>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 
-    <div class="index2" id="how-to">
-        <h2>1.เลือก SEC ของตัวเองเรียน<br>
-            2.เลือกรายวิชาที่ต้องการจะโน๊ต ( คลิ๊ก ) เพิ่มหัวข้อ +<br>
-            3.บรรทัด1 ชื่อการบ้านและเลขประจำตัว<br>
-            4.บรรทัด2 วันกำหนดส่ง<br>
-            5.บรรทัดต่อไปรายละเอียดการบ้านให้คนอื่นรับทราบ
-            (ทุกคนจะเห็นสิ่งที่คุณเขียน)<br>
-            6.สามารถแสดงความคิดเห็นการบ้านที่คนอื่นมาโน๊ตไว้ได้<br></h2>
+<body id="bg">
+  <header class="index2">
+    <h1><b>วิธีการใช้งาน</b></h1>
+    <a href="index.html">
+      <button class="index2" id=home-button>
+        <img src="https://cdn-icons-png.flaticon.com/512/7133/7133312.png" alt="Button Image">
+      </button>
+    </a>
+    <button data-modal-target="#modal">
+      <img src="https://static-00.iconduck.com/assets.00/wrench-icon-2047x2048-jyerjpd9.png" alt="Button Image">
+    </button> <!--setting -->
+    <a href="index2.html">
+      <button class="index2" id="howto-button">
+        <img src="https://static.thenounproject.com/png/3165598-200.png" alt="Button Image">
+      </button>
+    </a>
+  </header>
+
+  <div class="modal" id="modal" >
+    <div class="setting-header">
+        <div class="title">
+            <div>
+                <label class="toggle-label">Night mode</label>
+            </div>
+            <div>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="backgroundToggle">
+                    <div class="slider"></div>
+                </label>
+            </div>
+
+        </div>
+        <button data-close-button class="close-button" onclick="closeSetting()"><img
+                src="https://cdn-icons-png.flaticon.com/512/7693/7693271.png" alt="Close" class="close" onclick=""></button>
     </div>
-    
+    <div class="setting-body">
+        พรี่โอมสาวเยอะจัดเลยอะ
+    </div>
+  </div>
+  <div id="overlay"></div>
+
+  <div class="index2" id="how-to">
+    <h2>1.เลือก SEC ของตัวเองเรียน<br>
+      2.เลือกรายวิชาที่ต้องการจะโน๊ต ( คลิ๊ก ) เพิ่มหัวข้อ +<br>
+      3.บรรทัด1 ชื่อการบ้านและเลขประจำตัว<br>
+      4.บรรทัด2 วันกำหนดส่ง<br>
+      5.บรรทัดต่อไปรายละเอียดการบ้านให้คนอื่นรับทราบ
+      (ทุกคนจะเห็นสิ่งที่คุณเขียน)<br>
+      6.สามารถแสดงความคิดเห็นการบ้านที่คนอื่นมาโน๊ตไว้ได้<br></h2>
+  </div>
+
 </body>
+<script src="index.js"></script>
+<script defer src="script.js"></script>
+
 </html>

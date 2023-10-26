@@ -6,11 +6,55 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="classTableStyle.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="modalStyle.css">
 
     <title>Document</title>
 </head>
 <body>
     <div class="container">
+            
+        <a href="index.html">
+            <button class="index2" id=home-button>
+                <img src="https://cdn-icons-png.flaticon.com/512/7133/7133312.png" alt="Button Image">
+            </button>
+        </a>
+
+        <a href="index2.html">
+            <button class="index2" id="howto-button">
+                <img src="https://static.thenounproject.com/png/3165598-200.png" alt="Button Image">
+            </button>
+        </a>
+
+        <button onclick="openSetting()" data-modal-target="#modal">
+            <img src="https://static-00.iconduck.com/assets.00/wrench-icon-2047x2048-jyerjpd9.png" alt="Button Image">
+        </button><!--setting -->
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="modal" id="modal" >
+            <div class="setting-header">
+                <div class="title">
+                    <div>
+                        <label class="toggle-label">Night mode</label>
+                    </div>
+                    <div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="backgroundToggle">
+                            <div class="slider"></div>
+                        </label>
+                    </div>
+    
+                </div>
+                <button data-close-button class="close-button" onclick="closeSetting()"><img
+                        src="https://cdn-icons-png.flaticon.com/512/7693/7693271.png" alt="Close" class="close" onclick=""></button>
+            </div>
+            <div class="setting-body">
+                พรี่โอมสาวเยอะจัดเลยอะ
+            </div>
+        </div>
         <div class="header bg-primary">
             <h2>Section 1</h2>
         </div>
@@ -42,19 +86,92 @@
                 </div>
                 <div class="classesDisplay">
                     <div>
-                        <!-- <div class = "classObj">hello</div>
-                        <div class = "classObj">hello</div> -->
+                        <!-- <div class = "classObj"  onclick=displaySubjectInfo()>hello</div> -->
                     </div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    <div class = "dayRow"></div>
+                    <div class = "dayRow"></div>
+                    <div class = "dayRow"></div>
+                    <div class = "dayRow"></div>
+                    <div class = "dayRow"></div>
+                    <div class = "dayRow"></div>
                 </div>
+            </div>
+            
+        </div>
+        <div class="modal" id="modal">
+            <div class="setting-header">
+                <div class="title">
+                    <label class="toggle-label">Night mode</label>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="backgroundToggle">
+                        <div class="slider"></div>
+                    </label>
+                </div>
+                <button data-close-button class="close-button"><img
+                        src="https://cdn-icons-png.flaticon.com/512/7693/7693271.png" alt="Close" class="close"></button>
+            </div>
+            <div class="setting-body">
+                พรี่โอมสาวเยอะจัดเลยอะ
+            </div>
+        </div>
+        
+    </div>
+    <div class = "bg-modal">
+        <div class = "modal-content" >
+            <div>
+                <div>
+                    <h1><b class = "subjectName"></b></h1>
+                </div>
+                <div>
+                    <div onclick="hideSubjectInfo()">
+                        <img src="https://cdn-icons-png.flaticon.com/512/7693/7693271.png" alt="Close" class="close">
+                    </div>
+                </div>
+            </div>
+
+            
+        
+                <div class = assignment>
+                    <div>
+                        <div>หัวเรื่อง</div>
+                        <div>รายละเอียด</div>
+                        <div>กำหนดส่ง</div>
+                        <div></div>
+                    </div>
+                    <div>
+                        <div>การบ้านกลุ่ม000</div>
+                        <div>wed</div>
+                        <div>วว/ดด/ปป</div>
+                        <div>delete</div>
+                    </div>
+                    <div>
+                        <div>การบ้านxxx</div>
+                        <div>Sometimes I'm alone, sometimes I'm not</div>
+                        <div>15/ดด/ปป</div>
+                        <div>delete</div>
+                    </div>
+                </div>
+                <div style = "margin: 4vh auto; width: 100%; justify-content: center;">
+                    <button class="buttonTEST" id ="bt">ADD HOMEWORK</button>
+                </div>
+        </div>
+            
+    </div>
+        <div class = "popupSEC">
+            <div class = "popup-content">
+                <img src="https://cdn.icon-icons.com/icons2/620/PNG/512/notebook_icon-icons.com_56802.png" alt = "notebook_icon" class="mid">
+                <h1> ชื่อ วิชา </h1>
+                <input type="text" class="todo-topic" placeholder="Title">
+                <input type="Deadline" class="todo-dueDate" placeholder="Details">
+                <input type="Details" class="todo-detail" placeholder="Deadline">
+                <a href="" class="button-todo-add">Add</a>
+                <a href="" class="button-todo-close">Close</a>
             </div>
         </div>
     </div>
 </body>
-<script type = "module" src="classDataHandler.js"></script>
+<script src="script.js"></script>
+<script src = "scriptSEC.js"></script>
+<script src="classDataVisual.js"></script>
+<script src="classDataHandler.js"></script>
 </html>

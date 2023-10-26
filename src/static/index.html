@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
+
+    <link rel="stylesheet" href="style.css">
 
 </head>
 <!--  -->
+
 <body>
     <header class="index2">
         <h1><b>เลือก Section ที่ต้องการ</b></h1>
@@ -25,24 +28,35 @@
             </button>
         </a>
 
-        <button data-modal-target="#modal">
+        <button onclick="openSetting()" data-modal-target="#modal">
             <img src="https://static-00.iconduck.com/assets.00/wrench-icon-2047x2048-jyerjpd9.png" alt="Button Image">
-    </button><!--setting -->
-        
+        </button>
+
     </header>
 
-    <div class="modal" id="modal">
+    <div class="modal" id="modal" >
         <div class="setting-header">
-          <div class="title">P.ohm Setting</div>
-          <button data-close-button class="close-button">&times;</button>
+            <div class="title">
+                <div>
+                    <label class="toggle-label">Night mode</label>
+                </div>
+                <div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="backgroundToggle">
+                        <div class="slider"></div>
+                    </label>
+                </div>
+
+            </div>
+            <button data-close-button class="close-button" onclick="closeSetting()"><img
+                    src="https://cdn-icons-png.flaticon.com/512/7693/7693271.png" alt="Close" class="close" onclick=""></button>
         </div>
         <div class="setting-body">
-          พรี่โอมสาวเยอะจัดเลยอะ
+            พรี่โอมสาวเยอะจัดเลยอะ
         </div>
-      </div>
-      <div id="overlay"></div>
+    </div>
 
-      <div class="seclist">
+    <div class="seclist">
         <a href="section1.html">
             <button class="index1" id="Section1-button">
                 Section1
@@ -55,6 +69,7 @@
         </a>
     </div>
 
-   
     
-    
+
+</body>
+<script src="script.js"></script>
