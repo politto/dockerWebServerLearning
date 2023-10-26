@@ -61,12 +61,17 @@
 .assignment > div > div{
     flex-grow: 1;
     text-align:center;
-    height: 60px;
+    min-height: 60px;
+    max-width: 30%;
     /* background-color: blueviolet; */
 }
 .assignment > div:nth-child(1){
     background-color: blueviolet;
     color: #fff;
+}
+
+.assignment > div > div:nth-child(4){
+    flex-grow: 0.5;
 }
 
 .open-popup{

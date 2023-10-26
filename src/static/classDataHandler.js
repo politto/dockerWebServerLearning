@@ -122,6 +122,20 @@ function renderClassObj(id, classid, name, day, start, fin, prevfin){
     
 }
 
+function renderTodoObject(todoId, classId, topic, detail, dueDate){
+    const renderPlane = document.getElementsByClassName("assignmet")[0];
+    const dueDateFormatted = dueDate.getDate() + "/" + (dueDate.getMonth() + 1) + "/" + dueDate.getFullYear();
+    renderPlane.innerHTML = `
+        <div todoId = ${todoId}>
+            <div>${topic}}</div>
+            <div>${detail}</div>
+            <div>${dueDateFormatted}</div>
+            <div onClick = "hideTodoObject(${todoId})">delete</div>
+        </div>
+    `
+
+}
+
 
 
 
