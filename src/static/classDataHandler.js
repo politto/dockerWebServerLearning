@@ -137,9 +137,9 @@ function convertDeciMinToNormal(time){
 }
 
 function getClassDataByDay(dataArr, day) {
-    const getSection = document.getElementsByClassName('bg-primary')[0].getElementsByTagName('h2')[0];
+    const getSection = document.getElementsByClassName('bg-primary')[0].getElementsByTagName('h2')[0].getElementsByTagName('b')[0];
     console.log(getSection);
-    let sect = document.getElementsByClassName('bg-primary')[0].getElementsByTagName('h2')[0] === 'Section 1'? 1: 2; 
+    let sect = document.getElementsByClassName('bg-primary')[0].getElementsByTagName('h2')[0] === '1'? 1: 2; 
     console.log(sect);
     let ret = [];
     for (let i = 0; i < dataArr.length; i++) {
