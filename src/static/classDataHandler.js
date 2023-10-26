@@ -194,7 +194,7 @@ function hideTodoObject(id){
     while (divs[i] != undefined) {
         if (divs[i].getAttribute('todoId') === id) return divs[i].style.display = 'none';
     }
-    return "not found"
+    
 
 }
 
